@@ -1,4 +1,4 @@
-# Modern Web Atölyesi
+# Web Temelleri
 
 Türkçe, interaktif ve local-first modern frontend öğrenme uygulaması. Svelte tutorial mantığından esinlenen; ders anlatımı, görev, canlı preview, kod editörü, kontrol listesi, ipucu ve not alanını tek ekranda birleştiren desktop odaklı bir öğrenme deneyimidir.
 
