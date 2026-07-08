@@ -160,8 +160,10 @@
         }
       ],
       "hints": [
-        "Liste için <ul> ve <li> etiketlerini kullan.",
-        "HTML, CSS ve JavaScript kelimeleri previewda görünmeli."
+        "Bu görevde index.html dosyasındaki mevcut section içine yeni bir liste ekleyeceksin; styles.css ve script.js dosyalarına dokunman gerekmiyor.",
+        "HTML'de liste yapmak için önce <ul> açılır, her madde için ayrı bir <li> yazılır ve en sonda </ul> ile kapatılır.",
+        "Üç ayrı <li> satırı oluştur: biri HTML'in iskelet, biri CSS'in görünüm, biri JavaScript'in davranış olduğunu söylesin.",
+        "Check'in geçmesi için preview içinde HTML, CSS ve JavaScript kelimeleri görünmeli; listeyi paragrafın altına koymak en güvenli yer."
       ],
       "checks": [
         {
@@ -223,8 +225,10 @@
         }
       ],
       "hints": [
-        "Başlık için <h1>, metin için <p> kullan.",
-        "Etiketleri main içine yaz."
+        "Sadece index.html dosyasında çalış; starter kodda zaten <main> etiketi var, içerikleri onun içine yazman bekleniyor.",
+        "<h1> sayfanın ana başlığıdır. Bir sayfada genelde en önemli başlık için kullanılır.",
+        "<p> paragraf demektir; başlığın altına kısa bir açıklama cümlesi yazmak için uygundur.",
+        "Etiketleri çift düşün: <h1> ile açtıysan </h1> ile kapat, <p> ile açtıysan </p> ile kapat."
       ],
       "checks": [
         {
@@ -287,8 +291,10 @@
         }
       ],
       "hints": [
-        "h2 alt başlıktir.",
-        "Iki farklı <p> etiketi kullan."
+        "Bu derste amaç metni hiyerarşik kurmak: önce ana başlık, sonra alt başlık, sonra açıklama paragrafları.",
+        "<h1> en üst başlıktır; <h2> onun altındaki konu başlığı gibi davranır.",
+        "İki farklı <p> etiketi yazman gerekiyor; tek paragrafı uzatmak yerine iki ayrı metin bloğu oluştur.",
+        "Check genelde h1, h2 ve birden fazla paragraf arar; bu yüzden etiket isimlerini doğru yazmaya dikkat et."
       ],
       "checks": [
         {
@@ -351,8 +357,10 @@
         }
       ],
       "hints": [
-        "Link için href attribute gerekir.",
-        "img için src ve alt attribute kullan."
+        "Bu görev index.html içinde çözülür: biri <a> linki, biri <img> görsel etiketi ekleyeceksin.",
+        "Link için <a href=\"adres\">Görünen metin</a> yapısını kullan; href, tıklanınca gidilecek adresi tutar.",
+        "Görsel için <img src=\"adres\" alt=\"açıklama\" /> kullan; src görselin adresi, alt ise görsel yüklenmezse veya ekran okuyucu kullanılırsa okunan metindir.",
+        "Check'in geçmesi için hem href hem alt attribute'u bulunmalı; alt metni boş bırakma."
       ],
       "checks": [
         {
@@ -425,8 +433,10 @@
         }
       ],
       "hints": [
-        "CSS'te class seçici nokta ile başlar: .card",
-        "padding iceriden boşluk verir."
+        "HTML'deki kartın class adı card; bu yüzden CSS tarafında hedefin .card bloğu olacak.",
+        "Class seçiciler CSS'te nokta ile başlar: .card { ... }. Süslü parantezlerin içine stil kuralları yazılır.",
+        "background renk verir, padding kartın iç boşluğunu artırır, border-radius köşeleri yuvarlar.",
+        "Önce küçük bir değişiklik yapıp preview'a bak: örneğin sadece padding ekle. Sonra diğer stilleri aynı bloğa ekle."
       ],
       "checks": [
         {
@@ -499,8 +509,10 @@
         }
       ],
       "hints": [
-        "margin dis boşluktur.",
-        "border kutunun çizgisidir."
+        "Bu derste styles.css dosyasında .box seçicisinin içine kutu modelini anlatan stiller yazacaksın.",
+        "margin kutunun dışındaki boşluktur; kutuyu çevresindeki öğelerden uzaklaştırır.",
+        "padding kutunun içindeki boşluktur; metinle kenarlık arasına nefes alanı koyar.",
+        "border görünür çizgidir. Check için margin, padding ve border kelimelerinin CSS içinde doğru kural olarak bulunması gerekir."
       ],
       "checks": [
         {
@@ -573,8 +585,10 @@
         }
       ],
       "hints": [
-        "display: flex kapsayiciya yazılır.",
-        "gap elemanlar arasina boşluk koyar."
+        "Kartları yan yana getirmek için tek tek kartlara değil, onları saran kapsayıcı elemana stil vermen gerekir.",
+        "Kapsayıcıya display: flex yazınca içindeki çocuk elemanlar varsayılan olarak yatay dizilir.",
+        "gap, kartların arasına düzenli boşluk koyar; margin ile tek tek uğraşmana gerek kalmaz.",
+        "Preview'da kartlar yan yana ve aralarında boşlukla görünüyorsa doğru yoldasın."
       ],
       "checks": [
         {
@@ -647,8 +661,10 @@
         }
       ],
       "hints": [
-        "addEventListener(\\\"click\\\", ...) kullan.",
-        "Metni değiştirmek için textContent yeterli."
+        "Bu görevde HTML zaten buton ve mesaj alanını verir; davranışı script.js içinde yazacaksın.",
+        "Önce butonu ve mesajı seç: document.querySelector ile id veya class seçicilerini kullanabilirsin.",
+        "addEventListener(\"click\", ...) butona tıklanınca çalışacak kodu tanımlar.",
+        "Tıklama içinde mesaj elementinin textContent değerini Tiklandi! yap; Check metnin gerçekten değişmesini bekler."
       ],
       "checks": [
         {
@@ -731,8 +747,10 @@
         }
       ],
       "hints": [
-        "Class seçici nokta ile yazılır: .panel",
-        "classList.add yeni class ekler."
+        "DOM, HTML'in JavaScript tarafından görülen canlı halidir; bu derste bir HTML elementini seçip class ekleyeceksin.",
+        "Class seçerken CSS'teki gibi nokta kullanılır: document.querySelector(\".panel\").",
+        "Element seçildikten sonra classList.add(\"active\") ile ona yeni bir class verilebilir.",
+        "styles.css içindeki active stili görünümü değiştireceği için, doğru elementi seçtiğinde preview'da fark görmelisin."
       ],
       "checks": [
         {
@@ -795,8 +813,10 @@
         }
       ],
       "hints": [
-        "Component adi buyuk harfle başlar.",
-        "Bir component baska component içinde kullanılabilir."
+        "React component, tekrar kullanılabilir küçük bir arayüz fonksiyonudur; adı büyük harfle başlamalıdır.",
+        "WelcomeCard adında bir function yaz ve içinden JSX döndür: return (...) yapısı burada işini kolaylaştırır.",
+        "Component içinde en az bir <h1> olmalı; h1 kullanıcıya görünen başlığı temsil eder.",
+        "Componenti yazmak yetmez, App içinde <WelcomeCard /> şeklinde kullanarak ekrana dahil etmelisin."
       ],
       "checks": [
         {
@@ -859,8 +879,10 @@
         }
       ],
       "hints": [
-        "Props destructuring ile alinabilir: { title }",
-        "TS için { title: string } tipi yaz."
+        "Props, component'e dışarıdan verilen bilgidir; bu derste CourseCard başlığı kendisi yazmak yerine prop'tan alacak.",
+        "Fonksiyon parametresinde { title } kullanırsan title değerini doğrudan JSX içinde kullanabilirsin.",
+        "TypeScript için prop tipini açık yaz: { title: string } veya ayrı bir type tanımı kullan.",
+        "App içinde <CourseCard title=\"...\" /> gibi bir kullanım olmalı; sonra component içinde {title} ekrana basılmalı."
       ],
       "checks": [
         {
@@ -923,8 +945,10 @@
         }
       ],
       "hints": [
-        "useState react paketinden gelir.",
-        "onClick içinde setCount kullan."
+        "State, ekranda değişebilen bilgidir; sayaç değeri bunun en basit örneğidir.",
+        "useState React'ten import edilir ve genelde const [count, setCount] = useState(0) şeklinde kullanılır.",
+        "Butona onClick ver; tıklanınca setCount(count + 1) çağırarak değeri bir artır.",
+        "JSX içinde {count} yazarsan state değiştikçe ekrandaki sayı da otomatik güncellenir."
       ],
       "checks": [
         {
@@ -987,8 +1011,10 @@
         }
       ],
       "hints": [
-        "type ButtonProps = { ... } yazabilirsin.",
-        "Fonksiyon parametresine : ButtonProps ekle."
+        "Bu derste amaç component'in hangi prop'u beklediğini TypeScript'e söylemek.",
+        "Önce type ButtonProps = { label: string } gibi bir tip oluştur.",
+        "Sonra component parametresini bu tipe bağla: function Button({ label }: ButtonProps) gibi.",
+        "label değerini JSX içinde göster; tip tanımı sadece güvenlik sağlar, ekranda görünmesi için yine {label} kullanman gerekir."
       ],
       "checks": [
         {
@@ -1051,8 +1077,10 @@
         }
       ],
       "hints": [
-        "React'te class yerine className kullanılir.",
-        "rounded-lg, border, p-6, shadow-sm iyi bir başlangıç."
+        "Tailwind'de stiller CSS dosyasına değil, className içine küçük yardımcı class'lar olarak yazılır.",
+        "React'te class değil className kullanılır; article elementindeki className değerini genişleteceksin.",
+        "p-6 iç boşluk, border kenarlık, rounded-lg köşe, shadow-sm hafif gölge verir.",
+        "Class'ları tek tek ekleyip preview'a bak; Tailwind'de sıra çoğu zaman okunabilirlik içindir."
       ],
       "checks": [
         {
@@ -1115,8 +1143,10 @@
         }
       ],
       "hints": [
-        "Import yolu @/components/ui/button olabilir.",
-        "Native button yerine Button componentini kullan."
+        "Bu görev native <button> yerine hazır Button componentini kullanmayı öğretir.",
+        "Dosyanın en üstüne import ekle: Button componenti genelde @/components/ui/button yolundan gelir.",
+        "JSX içinde <Button>Kaydet</Button> gibi kullan; açılış ve kapanış etiketleri arasında görünen metin yer alır.",
+        "Eski button elementini tamamen değiştirdiğinden emin ol; Check Button import'unu ve kullanımını arar."
       ],
       "checks": [
         {
@@ -1179,8 +1209,10 @@
         }
       ],
       "hints": [
-        "Next.js sayfa componenti default export edilir.",
-        "JSX olarak <h1> dondurebilirsin."
+        "Next.js App Router'da app/page.tsx ana sayfayı temsil eder; bu dosyadaki default export ekrana gelir.",
+        "Home adında bir function oluşturabilir ve en altta export default Home yazabilirsin.",
+        "Fonksiyonun return değeri JSX olmalı; örneğin bir <main> içinde <h1> döndürmek iyi bir başlangıçtır.",
+        "Check h1 ve default export bekler; componenti yazıp export etmeyi unutma."
       ],
       "checks": [
         {
@@ -1243,8 +1275,10 @@
         }
       ],
       "hints": [
-        "JSON alanlari virgul ile ayrilir.",
-        "description en ust seviyede bir string olabilir."
+        "package.json bir JSON dosyasıdır; burada her alan anahtar-değer şeklinde yazılır.",
+        "description üst seviyede olmalı, yani scripts bloğunun içine değil name ve version gibi alanların yanına yazılmalı.",
+        "JSON'da string değerler çift tırnakla yazılır ve alanlar virgülle ayrılır.",
+        "Bir virgül eksik veya fazla olursa dosya geçersiz olur; değişiklikten sonra parantez ve virgülleri dikkatle kontrol et."
       ],
       "checks": [
         {
@@ -1307,8 +1341,10 @@
         }
       ],
       "hints": [
-        "README Markdown formatindadir.",
-        "Calistirma komutunu kod bloğu içinde yazabilirsin."
+        "README.md projenin giriş sayfasıdır; GitHub'da repo açıldığında ilk görünen metin buradan gelir.",
+        "Markdown'da # ana başlık, ## alt başlık demektir; proje amacını kısa bir başlık altında anlatabilirsin.",
+        "Komutları üç backtick arasında kod bloğu olarak yazmak okunurluğu artırır.",
+        "Kullanıcı bu projeyi ilk kez açıyor gibi düşün: amaç nedir ve çalıştırmak için ilk komut nedir?"
       ],
       "checks": [
         {
@@ -1371,8 +1407,10 @@
         }
       ],
       "hints": [
-        "components ekranda görünen parçalardir.",
-        "lib daha çok mantik ve yardımci fonksiyonlar içindir."
+        "Bu görevde kod yazmaktan çok klasörlerin sorumluluğunu açıklıyorsun; structure.md içindeki boş açıklamaları doldur.",
+        "components, ekranda görünen button, kart, panel gibi arayüz parçaları için kullanılır.",
+        "lib, tekrar kullanılabilen mantık ve yardımcı fonksiyonlar için uygundur.",
+        "content, ders verisi veya metin gibi uygulamanın kullandığı içerikleri tutar."
       ],
       "checks": [
         {
@@ -1435,8 +1473,10 @@
         }
       ],
       "hints": [
-        "Kontrol listesi için li kullan.",
-        "Build, mobil ve gizli bilgi maddeleri iyi başlangıçtir."
+        "Deployment öncesi kontrol listesi, uygulamayı paylaşmadan önce kendine sorduğun güvenlik ve kalite sorularıdır.",
+        "Liste HTML'de <ul> veya <ol> içinde <li> maddeleriyle yazılır.",
+        "İyi maddeler: build hatasız mı, mobilde okunuyor mu, gizli bilgiler repoya girmedi mi?",
+        "Check liste maddesi ve Build kelimesini arayabilir; en az üç somut kontrol yazmaya çalış."
       ],
       "checks": [
         {
@@ -1498,8 +1538,10 @@
         }
       ],
       "hints": [
-        "Her alışkanlık için article kullanabilirsin.",
-        "Erisilebilirlik ve anlamlı isimler iyi örneklerdir."
+        "Burada her iyi alışkanlığı ayrı bir kart gibi düşün; her kart için article kullanmak anlamlı olur.",
+        "Örnek alışkanlıklar: anlamlı isimler, küçük componentler, erişilebilir buton/label kullanımı, test edilebilir kod.",
+        "Sadece kelime listesi yazmak yerine her article içine kısa bir açıklama ekle.",
+        "Check article yapısını ve alışkanlık metinlerini arar; üç ayrı fikir görünür olmalı."
       ],
       "checks": [
         {
@@ -1592,8 +1634,10 @@
         }
       ],
       "hints": [
-        "Sirali akisi göstermek için ol kullan.",
-        "Iki kelime de ekranda görünmeli."
+        "Request ve response'u bir akış gibi düşün: tarayıcı ister, sunucu cevap verir.",
+        "Bu sıralı ilişki için <ol> iyi bir seçimdir; çünkü önce request sonra response gelir.",
+        "Her adımı ayrı <li> içinde yaz; bir maddede Request, diğerinde Response kelimesi görünmeli.",
+        "Listeyi kartın içindeki başlığın altına koyarsan hem anlam hem preview düzeni daha net olur."
       ],
       "checks": [
         {
@@ -1674,8 +1718,10 @@
         }
       ],
       "hints": [
-        "CSS head içinde link etiketiyle bağlanır.",
-        "script body sonunda durabilir."
+        "Bu görev üç dosyanın birbirine nasıl bağlandığını gösterir; asıl değişiklik index.html içinde yapılır.",
+        "CSS dosyası <head> içinde <link rel=\"stylesheet\" href=\"styles.css\" /> ile bağlanır.",
+        "JavaScript dosyası genelde </body> kapanmadan önce <script src=\"script.js\"></script> ile eklenir.",
+        "Dosya adları birebir aynı olmalı; styles.css yerine style.css yazarsan bağlantı çalışmaz."
       ],
       "checks": [
         {
@@ -1739,8 +1785,10 @@
         }
       ],
       "hints": [
-        "Ana görünen içerik main içine girer.",
-        "Alt bilgi footer için uygundur."
+        "Semantik HTML, div yerine görevi belli etiketler kullanmaktır; kodu okuyan kişi bölümün amacını anlar.",
+        "Sayfanın görünen ana içeriği <main> içine, bağımsız yazı veya not <article> içine girebilir.",
+        "Başlık veya üst alan için <header>, yıl/telif gibi alt bilgi için <footer> uygundur.",
+        "Eski div'i sadece sarmalayıcı olarak bırakmak yerine yapıyı gerçekten header, main, article ve footer ile böl."
       ],
       "checks": [
         {
@@ -1810,8 +1858,10 @@
         }
       ],
       "hints": [
-        "label for değeri input id ile aynı olmali.",
-        "button type submit olabilir."
+        "Formlarda label, input'un ne istediğini açıklar; özellikle erişilebilirlik için çok önemlidir.",
+        "label'ın for değeri, input'un id değeriyle aynı olmalı: for=\"email\" ve id=\"email\" gibi.",
+        "Email alanı için input type=\"email\" kullanmak tarayıcıya bu alanın e-posta beklediğini söyler.",
+        "Submit butonu formu göndermek için type=\"submit\" olabilir; buton metni kullanıcıya ne olacağını anlatmalı."
       ],
       "checks": [
         {
@@ -1892,8 +1942,10 @@
         }
       ],
       "hints": [
-        "Grid kapsayiciya yazılır.",
-        "minmax en küçük ve en buyuk kolon davranışıni belirler."
+        "Responsive grid için tek tek kartları değil, kartları saran kapsayıcıyı hedefle.",
+        "display: grid yazınca kapsayıcı grid düzenine geçer; gap kartlar arasında boşluk bırakır.",
+        "grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) kartların ekrana göre kırılmasını sağlar.",
+        "minmax içindeki ilk değer kartın en küçük rahat genişliği, 1fr ise kalan alanı paylaşmasıdır."
       ],
       "checks": [
         {
@@ -1965,8 +2017,10 @@
         }
       ],
       "hints": [
-        "@media (min-width: 760px) ile başla.",
-        "Sadece geniş ekranda kolon tanimla."
+        "Mobil öncelikli düşün: normal CSS küçük ekran için kalsın, geniş ekran davranışını @media içinde ekle.",
+        "@media (min-width: 760px) { ... } yalnızca ekran 760px ve üzerindeyken çalışır.",
+        "İki kolon için kapsayıcıya grid-template-columns yazabilirsin; bunu media query içine koy.",
+        "Böylece mobilde tek kolon, geniş ekranda iki kolon olur; responsive mantığın özü budur."
       ],
       "checks": [
         {
@@ -2050,8 +2104,10 @@
         }
       ],
       "hints": [
-        "open = !open boolean değeri tersler.",
-        "classList.toggle ikinci argumanla kosullu çalışır."
+        "Bu görevde state'i bir boolean gibi düşünebilirsin: panel açık mı, kapalı mı?",
+        "let open = false ile başlangıç durumu kapalı tutulur; tıklanınca open = !open değeri tersine çevirir.",
+        "classList.toggle(\"open\", open) ikinci argüman true ise class ekler, false ise kaldırır.",
+        "Butonun click event'i içinde hem state'i değiştir hem de class'ı güncelle; ikisi birlikte çalışmalı."
       ],
       "checks": [
         {
@@ -2123,8 +2179,10 @@
         }
       ],
       "hints": [
-        "Event adi input olmali.",
-        "input.value kullanıcınin yazdigi değerdir."
+        "input event'i kullanıcı her yazı yazdığında çalışır; canlı önizleme bu yüzden bu event ile yapılır.",
+        "Önce input elementini ve preview paragrafını JavaScript içinde seç.",
+        "Event fonksiyonunun içinde input.value değerini oku; bu, kullanıcının o an yazdığı metindir.",
+        "Sonra preview paragrafının textContent değerini input.value yap; yazdıkça ekranda aynı metin görünmeli."
       ],
       "checks": [
         {
@@ -2188,8 +2246,10 @@
         }
       ],
       "hints": [
-        "JSX içinde {course} yaz.",
-        "Metinle ifadeyi aynı h1 içinde kullanabilirsin."
+        "JSX içinde normal metin yazabilirsin ama JavaScript değişkeni kullanmak için süslü parantez gerekir.",
+        "course değişkeni zaten dosyada varsa, h1 içinde {course} yazarak değerini ekrana basabilirsin.",
+        "Metinle değişkeni birleştirmek serbesttir: <h1>{course} öğreniyorum</h1> gibi.",
+        "Tırnak içine {course} yazarsan değişken çalışmaz; süslü parantez JSX'e bunun JavaScript ifadesi olduğunu söyler."
       ],
       "checks": [
         {
@@ -2252,8 +2312,10 @@
         }
       ],
       "hints": [
-        "topics.map ile don.",
-        "li elementine key={topic} ver."
+        "Bir diziyi ekrana listelemek için map kullanılır; map her eleman için JSX döndürür.",
+        "topics.map((topic) => <li>{topic}</li>) temel fikirdir; sonra key eklenir.",
+        "key, React'in listedeki elemanları takip etmesini sağlar; burada key={topic} yeterli olur.",
+        "Liste elemanlarını bir <ul> içinde döndürürsen hem HTML anlamı hem React çıktısı daha doğru olur."
       ],
       "checks": [
         {
@@ -2316,8 +2378,10 @@
         }
       ],
       "hints": [
-        "onClick eventini butona ver.",
-        "setCount(count + 1) statei günceller."
+        "React'te ekranda değişecek değer state içinde tutulur; count sayacı bunun örneği.",
+        "useState ile count ve setCount oluştur; count ekrandaki sayı, setCount onu değiştiren fonksiyondur.",
+        "Butona onClick={() => setCount(count + 1)} vererek her tıklamada sayıyı artırabilirsin.",
+        "setCount çalışınca component yeniden render edilir; yani JSX içindeki {count} otomatik güncellenir."
       ],
       "checks": [
         {

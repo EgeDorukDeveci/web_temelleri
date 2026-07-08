@@ -561,10 +561,15 @@ function LessonPanel({
         </section>
 
         <section className="mt-4 rounded-md border bg-muted/35 p-3">
-          <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold">
-            <Lightbulb className="h-4 w-4 text-accent" />
-            İpucu
-          </h3>
+          <div className="mb-2 flex items-center justify-between gap-3">
+            <h3 className="flex items-center gap-2 text-sm font-semibold">
+              <Lightbulb className="h-4 w-4 text-accent" />
+              İpucu
+            </h3>
+            <span className="text-xs font-medium text-muted-foreground">
+              {hintIndex + 1}/{activeLesson.hints.length}
+            </span>
+          </div>
           <p className="text-sm text-muted-foreground">
             {activeLesson.hints[hintIndex] ?? activeLesson.hints[0]}
           </p>
