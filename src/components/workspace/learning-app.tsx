@@ -1,6 +1,12 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import type {
+  CSSProperties,
+  Dispatch,
+  PointerEvent as ReactPointerEvent,
+  SetStateAction
+} from "react";
 import {
   BookOpen,
   CheckCircle2,
@@ -38,6 +44,33 @@ const mobileTabs = [
 
 type MobileTab = (typeof mobileTabs)[number]["id"];
 
+type DesktopLayout = {
+  lessonWidth: number;
+  editorHeight: number;
+  previewWidth: number;
+};
+
+const DEFAULT_DESKTOP_LAYOUT: DesktopLayout = {
+  lessonWidth: 34,
+  editorHeight: 56,
+  previewWidth: 68
+};
+
+function clamp(value: number, min: number, max: number) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function readLayoutValue(
+  value: unknown,
+  fallback: number,
+  min: number,
+  max: number
+) {
+  return typeof value === "number" && Number.isFinite(value)
+    ? clamp(value, min, max)
+    : fallback;
+}
+
 export function LearningApp() {
   const [progress, setProgress] = useState<StoredProgress>(() =>
     createInitialProgress(tutorial.lessons)
@@ -49,6 +82,9 @@ export function LearningApp() {
   const [mobileTab, setMobileTab] = useState<MobileTab>("lesson");
   const [darkMode, setDarkMode] = useState(false);
   const [copyState, setCopyState] = useState<"idle" | "copied">("idle");
+  const [desktopLayout, setDesktopLayout] = useState<DesktopLayout>(
+    DEFAULT_DESKTOP_LAYOUT
+  );
 
   const lessonsById = useMemo(
     () => new Map(tutorial.lessons.map((lesson) => [lesson.id, lesson])),
@@ -70,6 +106,31 @@ export function LearningApp() {
       const storedTheme = window.localStorage.getItem("modern-web-atolyesi-theme");
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       setDarkMode(storedTheme ? storedTheme === "dark" : prefersDark);
+
+      const storedLayout = window.localStorage.getItem("modern-web-atolyesi-layout");
+      if (storedLayout) {
+        const parsed = JSON.parse(storedLayout) as Partial<DesktopLayout>;
+        setDesktopLayout({
+          lessonWidth: readLayoutValue(
+            parsed.lessonWidth,
+            DEFAULT_DESKTOP_LAYOUT.lessonWidth,
+            24,
+            48
+          ),
+          editorHeight: readLayoutValue(
+            parsed.editorHeight,
+            DEFAULT_DESKTOP_LAYOUT.editorHeight,
+            32,
+            74
+          ),
+          previewWidth: readLayoutValue(
+            parsed.previewWidth,
+            DEFAULT_DESKTOP_LAYOUT.previewWidth,
+            42,
+            78
+          )
+        });
+      }
     } catch {
       setDarkMode(false);
     }
@@ -93,6 +154,18 @@ export function LearningApp() {
       }
     }
   }, [darkMode, hydrated]);
+
+  useEffect(() => {
+    if (!hydrated) return;
+    try {
+      window.localStorage.setItem(
+        "modern-web-atolyesi-layout",
+        JSON.stringify(desktopLayout)
+      );
+    } catch {
+      // Layout persistence is optional in restricted desktop storage contexts.
+    }
+  }, [desktopLayout, hydrated]);
 
   useEffect(() => {
     const firstPath = activeLesson.starterFiles[0]?.path;
@@ -179,30 +252,61 @@ export function LearningApp() {
     updateLessonProgress(activeLesson.id, (current) => ({ ...current, notes }));
   }
 
-  function handlePanelDrag(event: React.MouseEvent<HTMLDivElement>) {
-    const startX = event.clientX;
-    const root = document.documentElement;
-    const initial = parseFloat(
-      getComputedStyle(root).getPropertyValue("--lesson-panel-width")
-    );
-    const base = Number.isFinite(initial) ? initial : 34;
+  function beginDrag(
+    event: ReactPointerEvent<HTMLDivElement>,
+    cursor: "col-resize" | "row-resize",
+    onMove: (clientX: number, clientY: number) => void
+  ) {
+    event.preventDefault();
+    const target = event.currentTarget;
+    target.setPointerCapture(event.pointerId);
 
-    function onMove(moveEvent: MouseEvent) {
-      const delta = ((moveEvent.clientX - startX) / window.innerWidth) * 100;
-      root.style.setProperty(
-        "--lesson-panel-width",
-        `${Math.min(46, Math.max(26, base + delta))}%`
-      );
+    const previousCursor = document.body.style.cursor;
+    const previousUserSelect = document.body.style.userSelect;
+    document.body.style.cursor = cursor;
+    document.body.style.userSelect = "none";
+
+    function handleMove(moveEvent: PointerEvent) {
+      onMove(moveEvent.clientX, moveEvent.clientY);
     }
 
-    function onUp() {
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseup", onUp);
+    function handleEnd(endEvent: PointerEvent) {
+      if (target.hasPointerCapture(endEvent.pointerId)) {
+        target.releasePointerCapture(endEvent.pointerId);
+      }
+      document.body.style.cursor = previousCursor;
+      document.body.style.userSelect = previousUserSelect;
+      window.removeEventListener("pointermove", handleMove);
+      window.removeEventListener("pointerup", handleEnd);
+      window.removeEventListener("pointercancel", handleEnd);
     }
 
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseup", onUp);
+    window.addEventListener("pointermove", handleMove);
+    window.addEventListener("pointerup", handleEnd);
+    window.addEventListener("pointercancel", handleEnd);
   }
+
+  function handleLessonPanelDrag(event: ReactPointerEvent<HTMLDivElement>) {
+    const startX = event.clientX;
+    const base = desktopLayout.lessonWidth;
+    const containerWidth =
+      event.currentTarget.parentElement?.getBoundingClientRect().width ??
+      window.innerWidth;
+
+    beginDrag(event, "col-resize", (clientX) => {
+      const delta = ((clientX - startX) / containerWidth) * 100;
+      setDesktopLayout((current) => ({
+        ...current,
+        lessonWidth: clamp(base + delta, 24, 48)
+      }));
+    });
+  }
+
+  const workspaceStyle = {
+    "--lesson-panel-width": `${desktopLayout.lessonWidth}%`,
+    "--editor-panel-height": `${desktopLayout.editorHeight}%`,
+    "--preview-panel-width": `${desktopLayout.previewWidth}%`
+  } as CSSProperties;
 
   return (
     <main className="h-[100dvh] overflow-hidden bg-[radial-gradient(circle_at_top_left,hsl(var(--accent)/0.12),transparent_30rem),linear-gradient(180deg,hsl(var(--background)),hsl(var(--muted)/0.45))]">
@@ -216,7 +320,10 @@ export function LearningApp() {
 
       <div className="hidden h-[calc(100dvh-84px)] min-h-0 lg:flex">
         <ActivityRail completedCount={completedCount} totalCount={tutorial.lessons.length} />
-        <div className="grid min-w-0 flex-1 gap-0 workspace-grid">
+        <div
+          className="grid min-w-0 flex-1 gap-0 workspace-grid"
+          style={workspaceStyle}
+        >
           <LessonPanel
             activeLesson={activeLesson}
             checkResult={checkResult}
@@ -246,20 +353,23 @@ export function LearningApp() {
             progress={progress}
           />
 
-          <div
-            aria-hidden="true"
-            className="w-1 cursor-col-resize bg-border/80 transition-colors hover:bg-primary"
-            onMouseDown={handlePanelDrag}
+          <ResizeHandle
+            label="Ders paneli genişliğini değiştir"
+            onPointerDown={handleLessonPanelDrag}
+            orientation="vertical"
           />
 
           <EditorPreviewPanel
             activeFilePath={activeFilePath}
+            beginDrag={beginDrag}
             currentFiles={currentFiles}
             darkMode={darkMode}
+            desktopLayout={desktopLayout}
             lesson={activeLesson}
             notes={lessonProgress?.notes ?? ""}
             onActiveFilePathChange={setActiveFilePath}
             onNotesChange={updateNotes}
+            onResize={setDesktopLayout}
             onUpdateFile={updateFile}
             previewDoc={previewDoc}
           />
@@ -699,6 +809,9 @@ function EditorPreviewPanel({
   previewDoc,
   notes,
   darkMode,
+  desktopLayout,
+  beginDrag,
+  onResize,
   onActiveFilePathChange,
   onUpdateFile,
   onNotesChange
@@ -709,10 +822,49 @@ function EditorPreviewPanel({
   previewDoc: string;
   notes: string;
   darkMode: boolean;
+  desktopLayout: DesktopLayout;
+  beginDrag: (
+    event: ReactPointerEvent<HTMLDivElement>,
+    cursor: "col-resize" | "row-resize",
+    onMove: (clientX: number, clientY: number) => void
+  ) => void;
+  onResize: Dispatch<SetStateAction<DesktopLayout>>;
   onActiveFilePathChange: (path: string) => void;
   onUpdateFile: (path: string, value: string) => void;
   onNotesChange: (notes: string) => void;
 }) {
+  function handleEditorHeightDrag(event: ReactPointerEvent<HTMLDivElement>) {
+    const startY = event.clientY;
+    const base = desktopLayout.editorHeight;
+    const containerHeight =
+      event.currentTarget.parentElement?.getBoundingClientRect().height ??
+      window.innerHeight;
+
+    beginDrag(event, "row-resize", (_clientX, clientY) => {
+      const delta = ((clientY - startY) / containerHeight) * 100;
+      onResize((current) => ({
+        ...current,
+        editorHeight: clamp(base + delta, 32, 74)
+      }));
+    });
+  }
+
+  function handlePreviewWidthDrag(event: ReactPointerEvent<HTMLDivElement>) {
+    const startX = event.clientX;
+    const base = desktopLayout.previewWidth;
+    const containerWidth =
+      event.currentTarget.parentElement?.getBoundingClientRect().width ??
+      window.innerWidth;
+
+    beginDrag(event, "col-resize", (clientX) => {
+      const delta = ((clientX - startX) / containerWidth) * 100;
+      onResize((current) => ({
+        ...current,
+        previewWidth: clamp(base + delta, 42, 78)
+      }));
+    });
+  }
+
   return (
     <section className="grid h-full min-h-0 min-w-0 bg-muted/35 editor-preview-grid">
       <div className="min-h-0 border-b bg-background/88">
@@ -733,11 +885,46 @@ function EditorPreviewPanel({
           />
         </div>
       </div>
-      <div className="grid min-h-0 grid-cols-[1fr_300px]">
+      <ResizeHandle
+        label="Kod editörü yüksekliğini değiştir"
+        onPointerDown={handleEditorHeightDrag}
+        orientation="horizontal"
+      />
+      <div className="grid min-h-0 preview-notes-grid">
         <PreviewFrame darkMode={darkMode} srcDoc={previewDoc} />
+        <ResizeHandle
+          label="Preview ve notlar genişliğini değiştir"
+          onPointerDown={handlePreviewWidthDrag}
+          orientation="vertical"
+        />
         <NotesPanel notes={notes} onChange={onNotesChange} />
       </div>
     </section>
+  );
+}
+
+function ResizeHandle({
+  label,
+  onPointerDown,
+  orientation
+}: {
+  label: string;
+  onPointerDown: (event: ReactPointerEvent<HTMLDivElement>) => void;
+  orientation: "horizontal" | "vertical";
+}) {
+  return (
+    <div
+      aria-label={label}
+      aria-orientation={orientation}
+      className="resize-handle"
+      data-orientation={orientation}
+      onPointerDown={onPointerDown}
+      role="separator"
+      tabIndex={0}
+      title={label}
+    >
+      <span aria-hidden="true" />
+    </div>
   );
 }
 
@@ -749,7 +936,7 @@ function PreviewFrame({
   darkMode: boolean;
 }) {
   return (
-    <div className="flex min-h-0 flex-col border-r bg-background">
+    <div className="flex min-h-0 flex-col bg-background">
       <div className="flex h-10 items-center gap-2 border-b px-3 text-sm font-semibold">
         <Eye className="h-4 w-4" />
         Canlı preview

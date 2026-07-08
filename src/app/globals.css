@@ -74,7 +74,7 @@ input {
 }
 
 .workspace-grid {
-  grid-template-columns: minmax(340px, var(--lesson-panel-width, 34%)) 4px minmax(0, 1fr);
+  grid-template-columns: minmax(320px, var(--lesson-panel-width, 34%)) 8px minmax(0, 1fr);
   grid-template-rows: minmax(0, 1fr);
 }
 
@@ -84,5 +84,53 @@ input {
 }
 
 .editor-preview-grid {
-  grid-template-rows: minmax(240px, var(--editor-panel-height, 56%)) minmax(180px, 1fr);
+  grid-template-rows: minmax(190px, var(--editor-panel-height, 56%)) 8px minmax(160px, 1fr);
+}
+
+.preview-notes-grid {
+  grid-template-columns: minmax(260px, var(--preview-panel-width, 68%)) 8px minmax(220px, 1fr);
+}
+
+.resize-handle {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(var(--border) / 0.52);
+  outline: none;
+  touch-action: none;
+  transition:
+    background 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.resize-handle:hover,
+.resize-handle:focus-visible {
+  background: hsl(var(--primary) / 0.45);
+  box-shadow: 0 0 0 1px hsl(var(--primary) / 0.25);
+}
+
+.resize-handle[data-orientation="vertical"] {
+  cursor: col-resize;
+}
+
+.resize-handle[data-orientation="horizontal"] {
+  cursor: row-resize;
+}
+
+.resize-handle > span {
+  display: block;
+  border-radius: 999px;
+  background: hsl(var(--foreground) / 0.26);
+}
+
+.resize-handle[data-orientation="vertical"] > span {
+  width: 2px;
+  height: 34px;
+}
+
+.resize-handle[data-orientation="horizontal"] > span {
+  width: 42px;
+  height: 2px;
 }
