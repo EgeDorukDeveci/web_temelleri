@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --font-geist-sans: "Segoe UI";
+  --font-geist-mono: "Cascadia Code";
+  --background: 42 38% 96%;
+  --foreground: 205 34% 12%;
+  --muted: 44 22% 89%;
+  --muted-foreground: 205 12% 42%;
+  --border: 42 18% 78%;
+  --input: 42 18% 82%;
+  --ring: 174 58% 38%;
+  --primary: 174 63% 31%;
+  --primary-foreground: 42 38% 96%;
+  --secondary: 207 22% 18%;
+  --secondary-foreground: 42 38% 94%;
+  --accent: 25 82% 54%;
+  --accent-foreground: 205 34% 12%;
+  --destructive: 355 68% 47%;
+  --destructive-foreground: 42 38% 96%;
+  --success: 142 46% 36%;
+  --success-foreground: 42 38% 96%;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: 206 30% 8%;
+  --foreground: 42 34% 92%;
+  --muted: 206 24% 14%;
+  --muted-foreground: 42 14% 68%;
+  --border: 206 18% 22%;
+  --input: 206 18% 19%;
+  --ring: 172 54% 45%;
+  --primary: 172 54% 45%;
+  --primary-foreground: 206 30% 8%;
+  --secondary: 207 26% 14%;
+  --secondary-foreground: 42 32% 92%;
+  --accent: 30 82% 56%;
+  --accent-foreground: 206 30% 8%;
+  --destructive: 358 72% 58%;
+  --destructive-foreground: 42 34% 93%;
+  --success: 145 46% 45%;
+  --success-foreground: 206 30% 8%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: hsl(var(--accent) / 0.35);
+}
+
+.workspace-grid {
+  grid-template-columns: minmax(340px, var(--lesson-panel-width, 34%)) 4px minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.workspace-grid > * {
+  min-height: 0;
+  min-width: 0;
+}
+
+.editor-preview-grid {
+  grid-template-rows: minmax(240px, var(--editor-panel-height, 56%)) minmax(180px, 1fr);
+}

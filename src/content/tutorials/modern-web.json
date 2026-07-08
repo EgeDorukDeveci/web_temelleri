@@ -1,0 +1,2346 @@
+{
+  "id": "modern-web",
+  "title": "Modern Web Atölyesi",
+  "description": "Türkçe, interaktif, local-first modern frontend öğrenme yolu.",
+  "sections": [
+    {
+      "id": "web",
+      "title": "Webin temelleri",
+      "description": "Tarayıcı, HTML, CSS ve JS rollerini kavra.",
+      "lessonIds": [
+        "web-nasıl-calisir"
+      ]
+    },
+    {
+      "id": "web-core-deep",
+      "title": "Web çekirdeği derinleşme",
+      "description": "Request/response, dosya bağlantıları ve tarayıcı zihinsel modeli.",
+      "lessonIds": [
+        "request-response-derin",
+        "dosya-baglama-derin"
+      ]
+    },
+    {
+      "id": "html",
+      "title": "HTML",
+      "description": "Anlamlı sayfa iskeleti kur.",
+      "lessonIds": [
+        "ilk-html-sayfan",
+        "basliklar-paragraflar",
+        "linkler-gorseller"
+      ]
+    },
+    {
+      "id": "html-deep",
+      "title": "HTML derinleşme",
+      "description": "Semantik bölümler, formlar ve erişilebilir içerik.",
+      "lessonIds": [
+        "semantik-html-derin",
+        "form-label-baglanti"
+      ]
+    },
+    {
+      "id": "css",
+      "title": "CSS",
+      "description": "Stil ve layout temellerini öğren.",
+      "lessonIds": [
+        "css-ile-stil",
+        "box-model",
+        "flexbox-layout"
+      ]
+    },
+    {
+      "id": "css-deep",
+      "title": "CSS layout derinleşme",
+      "description": "Seçiciler, grid, responsive düşünme ve state stilleri.",
+      "lessonIds": [
+        "grid-responsive-derin",
+        "media-query-derin"
+      ]
+    },
+    {
+      "id": "javascript",
+      "title": "JavaScript",
+      "description": "Etkileşimli sayfalar geliştir.",
+      "lessonIds": [
+        "js-button-click",
+        "dom-element-secme"
+      ]
+    },
+    {
+      "id": "js-deep",
+      "title": "JavaScript etkileşim derinleşme",
+      "description": "DOM, event, UI state ve veri ile ekran ilişkisi.",
+      "lessonIds": [
+        "ui-state-toggle",
+        "input-event-derin"
+      ]
+    },
+    {
+      "id": "modern-stack",
+      "title": "Modern frontend",
+      "description": "React, TypeScript, Tailwind, shadcn/ui ve Next.js girişi.",
+      "lessonIds": [
+        "react-component",
+        "react-props",
+        "react-state",
+        "typescript-prop",
+        "tailwind-card",
+        "shadcn-button",
+        "next-app-router"
+      ]
+    },
+    {
+      "id": "react-deep",
+      "title": "React derinleşme",
+      "description": "JSX, listeler, render döngüsü ve component kontratlari.",
+      "lessonIds": [
+        "jsx-expression-derin",
+        "react-list-key-derin",
+        "react-render-dongusu-derin"
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "Araçlar ve yayınlama",
+      "description": "Paket yönetimi, Git, klasör düzeni, deployment ve modern alışkanlıklar.",
+      "lessonIds": [
+        "npm-pnpm-temelleri",
+        "git-github-temelleri",
+        "proje-klasor-yapisi",
+        "deployment-mantigi",
+        "modern-frontend-aliskanliklari"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "web-nasıl-calisir",
+      "title": "Web nasıl çalışır?",
+      "section": "Webin temelleri",
+      "difficulty": "başlangıç",
+      "explanation": "Web, tarayıcınin bir sunucudan dosya istemesiyle başlar. HTML iskeleti, CSS görünümu, JavaScript davranışı belirler. Bu derste ucunun aynı sayfada nasıl bir araya geldiğini goreceksin.",
+      "learningGoals": [
+        "HTML, CSS ve JS rollerini ayırt etmek",
+        "Preview döngüsünu tanımak"
+      ],
+      "task": "Sayfaya webin üç parçasıni anlatan kısa bir liste ekle.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"card\">\n  <h1>Web Atölyesi</h1>\n  <p>Tarayıcı kodu okur ve sonucu ekranda gösterir.</p>\n</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": "body {\n  background: #f7efe2;\n}\n\n.card {\n  max-width: 560px;\n  margin: 48px auto;\n  padding: 28px;\n  border: 1px solid #dbcdb7;\n  border-radius: 12px;\n}"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "console.log(\"Preview hazır\");"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"card\">\n  <h1>Web Atölyesi</h1>\n  <p>Tarayıcı kodu okur ve sonucu ekranda gösterir.</p>\n  <ul>\n    <li>HTML: anlam ve iskelet</li>\n    <li>CSS: görünüm ve layout</li>\n    <li>JavaScript: davranış ve etkileşim</li>\n  </ul>\n</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": "body {\n  background: #f7efe2;\n}\n\n.card {\n  max-width: 560px;\n  margin: 48px auto;\n  padding: 28px;\n  border: 1px solid #dbcdb7;\n  border-radius: 12px;\n}"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "console.log(\"Preview hazır\");"
+        }
+      ],
+      "hints": [
+        "Liste için <ul> ve <li> etiketlerini kullan.",
+        "HTML, CSS ve JavaScript kelimeleri previewda görünmeli."
+      ],
+      "checks": [
+        {
+          "id": "has-list",
+          "label": "Bir liste eklenmiş",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "<ul>"
+        },
+        {
+          "id": "mentions-js",
+          "label": "JavaScript rolü yazılmış",
+          "type": "preview-contains",
+          "value": "JavaScript"
+        }
+      ],
+      "nextLessonId": "ilk-html-sayfan",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "previousLessonId": null,
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "ilk-html-sayfan",
+      "title": "İlk HTML sayfan",
+      "section": "HTML",
+      "difficulty": "başlangıç",
+      "explanation": "HTML etiketlerden olusur. Her etiket sayfadaki bir parçaya anlam verir. En basit sayfa bir başlık ve açıklama ile başlayabilir.",
+      "learningGoals": [
+        "h1 ve p etiketlerini kullanmak",
+        "HTML'in anlam katmanı olduğunu görmek"
+      ],
+      "task": "Sayfaya kendi ilk HTML basligini ve kısa bir paragraf ekle.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<main>\n  \n</main>"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<main>\n  <h1>İlk HTML sayfam</h1>\n  <p>Bugün web sayfası oluşturmayi öğreniyorum.</p>\n</main>"
+        }
+      ],
+      "hints": [
+        "Başlık için <h1>, metin için <p> kullan.",
+        "Etiketleri main içine yaz."
+      ],
+      "checks": [
+        {
+          "id": "has-h1",
+          "label": "h1 basligi var",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "<h1>"
+        },
+        {
+          "id": "has-p",
+          "label": "p paragrafi var",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "<p>"
+        }
+      ],
+      "previousLessonId": "web-nasıl-calisir",
+      "nextLessonId": "basliklar-paragraflar",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "basliklar-paragraflar",
+      "title": "Başlıklar ve paragraflar",
+      "section": "HTML",
+      "difficulty": "başlangıç",
+      "explanation": "Başlıklar sayfanin hiyerarşisini kurar. Paragraflar ise okunabilir metin bloklari oluşturur.",
+      "learningGoals": [
+        "Başlık hiyerarşisi kurmak",
+        "Okunabilir içerik yazmak"
+      ],
+      "task": "Bir h1, bir h2 ve iki paragrafla kısa bir ders notu yaz.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<article>\n  <h1>Frontend notlari</h1>\n</article>"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<article>\n  <h1>Frontend notlari</h1>\n  <p>Frontend, kullanıcınin gördügu ve etkileşime girdigi katmandir.</p>\n  <h2>Bugünku hedef</h2>\n  <p>HTML ile sayfaya anlamlı bir iskelet vermek.</p>\n</article>"
+        }
+      ],
+      "hints": [
+        "h2 alt başlıktir.",
+        "Iki farklı <p> etiketi kullan."
+      ],
+      "checks": [
+        {
+          "id": "has-h2",
+          "label": "Alt başlık eklenmiş",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "<h2>"
+        },
+        {
+          "id": "two-p",
+          "label": "En az iki paragraf var",
+          "type": "code-regex",
+          "file": "index.html",
+          "pattern": "<p>[\\\\\\s\\\\\\S]*<\\\\\\/p>[\\\\\\s\\\\\\S]*<p>"
+        }
+      ],
+      "previousLessonId": "ilk-html-sayfan",
+      "nextLessonId": "linkler-gorseller",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "linkler-gorseller",
+      "title": "Linkler ve görseller",
+      "section": "HTML",
+      "difficulty": "kolay",
+      "explanation": "Linkler sayfalari birbirine bağlar. Görseller icerigi zenginlestirir, ama alt metin erişilebilirlik için gereklidir.",
+      "learningGoals": [
+        "a etiketi ile link vermek",
+        "img etiketi ve alt metni kullanmak"
+      ],
+      "task": "Bir dokümantasyon linki ve alt metinli bir görsel ekle.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section>\n  <h1>Kaynaklar</h1>\n</section>"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section>\n  <h1>Kaynaklar</h1>\n  <a href=\"https://developer.mozilla.org\">MDN Web Docs</a>\n  <img src=\"https://placehold.co/480x220\" alt=\"Ornek web sayfası taslağı\" />\n</section>"
+        }
+      ],
+      "hints": [
+        "Link için href attribute gerekir.",
+        "img için src ve alt attribute kullan."
+      ],
+      "checks": [
+        {
+          "id": "has-link",
+          "label": "Link eklenmiş",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "<a href="
+        },
+        {
+          "id": "has-alt",
+          "label": "Görselde alt metin var",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "alt="
+        }
+      ],
+      "previousLessonId": "basliklar-paragraflar",
+      "nextLessonId": "css-ile-stil",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "css-ile-stil",
+      "title": "CSS ile stil verme",
+      "section": "CSS",
+      "difficulty": "kolay",
+      "explanation": "CSS, HTML'in nasıl görünecegini belirler. Renk, boşluk, border ve font gibi kararlar burada verilir.",
+      "learningGoals": [
+        "Class seçici kullanmak",
+        "Renk ve boşluk vermek"
+      ],
+      "task": "Kart class'ina arka plan, padding ve border radius ekle.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<article class=\"card\">\n  <h1>CSS karti</h1>\n  <p>Stil sayfayı okunur hale getirir.</p>\n</article>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".card {\n  max-width: 420px;\n  margin: 40px auto;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<article class=\"card\">\n  <h1>CSS karti</h1>\n  <p>Stil sayfayı okunur hale getirir.</p>\n</article>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".card {\n  max-width: 420px;\n  margin: 40px auto;\n  padding: 24px;\n  background: #ffffff;\n  border-radius: 16px;\n}"
+        }
+      ],
+      "hints": [
+        "CSS'te class seçici nokta ile başlar: .card",
+        "padding iceriden boşluk verir."
+      ],
+      "checks": [
+        {
+          "id": "has-padding",
+          "label": "Padding eklendi",
+          "type": "code-contains",
+          "file": "styles.css",
+          "value": "padding"
+        },
+        {
+          "id": "has-radius",
+          "label": "Border radius eklendi",
+          "type": "code-contains",
+          "file": "styles.css",
+          "value": "border-radius"
+        }
+      ],
+      "previousLessonId": "linkler-gorseller",
+      "nextLessonId": "box-model",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "box-model",
+      "title": "Box model",
+      "section": "CSS",
+      "difficulty": "kolay",
+      "explanation": "Her HTML elementi bir kutu gibi düşünulur: content, padding, border ve margin. Layout okumayi kolaylastiran temel model budur.",
+      "learningGoals": [
+        "Margin ve padding farkini anlamak",
+        "Border kullanmak"
+      ],
+      "task": "Kutunun dış boşlugunu, iç boşlugunu ve border'ini ayarla.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<div class=\"box\">Box model pratigi</div>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".box {\n  background: #e8f7f3;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<div class=\"box\">Box model pratigi</div>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".box {\n  margin: 48px;\n  padding: 24px;\n  border: 2px solid #1b8a7a;\n  background: #e8f7f3;\n}"
+        }
+      ],
+      "hints": [
+        "margin dis boşluktur.",
+        "border kutunun çizgisidir."
+      ],
+      "checks": [
+        {
+          "id": "has-margin",
+          "label": "Margin kullanıldi",
+          "type": "code-contains",
+          "file": "styles.css",
+          "value": "margin"
+        },
+        {
+          "id": "has-border",
+          "label": "Border kullanıldi",
+          "type": "code-contains",
+          "file": "styles.css",
+          "value": "border"
+        }
+      ],
+      "previousLessonId": "css-ile-stil",
+      "nextLessonId": "flexbox-layout",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "flexbox-layout",
+      "title": "Flexbox ile layout",
+      "section": "CSS",
+      "difficulty": "orta",
+      "explanation": "Flexbox, elemanlari bir eksen uzerinde hizalamayi kolaylastirir. Kartlar, toolbarlar ve navigasyonlar için çok kullanışlıdır.",
+      "learningGoals": [
+        "display flex kullanmak",
+        "Gap ve hizalama vermek"
+      ],
+      "task": "Kart listesini yatay ve boşluklu hale getir.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<div class=\"cards\">\n  <article>HTML</article>\n  <article>CSS</article>\n  <article>JS</article>\n</div>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".cards article {\n  padding: 20px;\n  background: white;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<div class=\"cards\">\n  <article>HTML</article>\n  <article>CSS</article>\n  <article>JS</article>\n</div>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".cards {\n  display: flex;\n  gap: 16px;\n  align-items: stretch;\n}\n\n.cards article {\n  padding: 20px;\n  background: white;\n}"
+        }
+      ],
+      "hints": [
+        "display: flex kapsayiciya yazılır.",
+        "gap elemanlar arasina boşluk koyar."
+      ],
+      "checks": [
+        {
+          "id": "has-flex",
+          "label": "Flexbox aktif",
+          "type": "code-contains",
+          "file": "styles.css",
+          "value": "display: flex"
+        },
+        {
+          "id": "has-gap",
+          "label": "Gap kullanıldi",
+          "type": "code-contains",
+          "file": "styles.css",
+          "value": "gap"
+        }
+      ],
+      "previousLessonId": "box-model",
+      "nextLessonId": "js-button-click",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "js-button-click",
+      "title": "JavaScript ile butona tıklama",
+      "section": "JavaScript",
+      "difficulty": "kolay",
+      "explanation": "JavaScript, kullanıcı etkileşimlerine cevap verir. Bir butona event listener ekleyerek tıklama aninda kod çalıştırabilirsin.",
+      "learningGoals": [
+        "click eventini dinlemek",
+        "Metni JavaScript ile değiştirmek"
+      ],
+      "task": "Butona tıklaninca mesaj metnini 'Tiklandi!' yap.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<button id=\"action\">Calistir</button>\n<p id=\"message\">Bekleniyor...</p>"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "const button = document.querySelector(\"#action\");\nconst message = document.querySelector(\"#message\");"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<button id=\"action\">Calistir</button>\n<p id=\"message\">Bekleniyor...</p>"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "const button = document.querySelector(\"#action\");\nconst message = document.querySelector(\"#message\");\n\nbutton.addEventListener(\"click\", () => {\n  message.textContent = \"Tiklandi!\";\n});"
+        }
+      ],
+      "hints": [
+        "addEventListener(\\\"click\\\", ...) kullan.",
+        "Metni değiştirmek için textContent yeterli."
+      ],
+      "checks": [
+        {
+          "id": "has-listener",
+          "label": "Click listener eklendi",
+          "type": "code-contains",
+          "file": "script.js",
+          "value": "addEventListener"
+        },
+        {
+          "id": "has-text",
+          "label": "Tiklandi metni yazildi",
+          "type": "code-contains",
+          "file": "script.js",
+          "value": "Tiklandi!"
+        }
+      ],
+      "previousLessonId": "flexbox-layout",
+      "nextLessonId": "dom-element-secme",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "dom-element-secme",
+      "title": "DOM'dan element secme",
+      "section": "JavaScript",
+      "difficulty": "kolay",
+      "explanation": "DOM, HTML'in JavaScript tarafindaki temsilidir. querySelector ile sayfadaki bir elementi secip okuyabilir veya değiştirebilirsin.",
+      "learningGoals": [
+        "querySelector kullanmak",
+        "Class eklemek"
+      ],
+      "task": "Panel elementini sec ve active class'ini ekle.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"panel\">DOM ile secilecegim</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".active {\n  outline: 3px solid #1b8a7a;\n}"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "// paneli burada sec"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"panel\">DOM ile secilecegim</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".active {\n  outline: 3px solid #1b8a7a;\n}"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "const panel = document.querySelector(\".panel\");\npanel.classList.add(\"active\");"
+        }
+      ],
+      "hints": [
+        "Class seçici nokta ile yazılır: .panel",
+        "classList.add yeni class ekler."
+      ],
+      "checks": [
+        {
+          "id": "uses-query",
+          "label": "querySelector kullanıldi",
+          "type": "code-contains",
+          "file": "script.js",
+          "value": "querySelector"
+        },
+        {
+          "id": "adds-class",
+          "label": "active class'i ekleniyor",
+          "type": "code-contains",
+          "file": "script.js",
+          "value": "classList.add"
+        }
+      ],
+      "previousLessonId": "js-button-click",
+      "nextLessonId": "react-component",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "react-component",
+      "title": "React component nedir?",
+      "section": "React",
+      "difficulty": "başlangıç",
+      "explanation": "Component, arayuzun tekrar kullanılabilir parçasıdir. React'te component genellikle JSX donduren bir fonksiyondur.",
+      "learningGoals": [
+        "Fonksiyon component yazmak",
+        "JSX dondurmek"
+      ],
+      "task": "WelcomeCard adinda bir component oluştur ve h1 dondur.",
+      "starterFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "export default function App() {\n  return <main />;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "function WelcomeCard() {\n  return <h1>React component hazır</h1>;\n}\n\nexport default function App() {\n  return <WelcomeCard />;\n}"
+        }
+      ],
+      "hints": [
+        "Component adi buyuk harfle başlar.",
+        "Bir component baska component içinde kullanılabilir."
+      ],
+      "checks": [
+        {
+          "id": "has-component",
+          "label": "WelcomeCard componenti var",
+          "type": "code-regex",
+          "file": "App.tsx",
+          "pattern": "function\\\\\\s+WelcomeCard"
+        },
+        {
+          "id": "renders-component",
+          "label": "WelcomeCard kullanıliyor",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": "<WelcomeCard"
+        }
+      ],
+      "previousLessonId": "dom-element-secme",
+      "nextLessonId": "react-props",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "react-props",
+      "title": "Props kullanimi",
+      "section": "React",
+      "difficulty": "kolay",
+      "explanation": "Props, parent componentten child componente veri tasir. Boylece aynı component farklı içerikle yeniden kullanılir.",
+      "learningGoals": [
+        "Props parametresi almak",
+        "Props değerini JSX içinde kullanmak"
+      ],
+      "task": "CourseCard componentine title prop'u ekle ve ekranda göster.",
+      "starterFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "function CourseCard() {\n  return <article></article>;\n}\n\nexport default function App() {\n  return <CourseCard />;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "function CourseCard({ title }: { title: string }) {\n  return <article>{title}</article>;\n}\n\nexport default function App() {\n  return <CourseCard title=\"React Props\" />;\n}"
+        }
+      ],
+      "hints": [
+        "Props destructuring ile alinabilir: { title }",
+        "TS için { title: string } tipi yaz."
+      ],
+      "checks": [
+        {
+          "id": "has-title-prop",
+          "label": "title prop'u tanimli",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": "title"
+        },
+        {
+          "id": "passes-title",
+          "label": "Component'e title veriliyor",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": "title="
+        }
+      ],
+      "previousLessonId": "react-component",
+      "nextLessonId": "react-state",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "react-state",
+      "title": "State kullanimi",
+      "section": "React",
+      "difficulty": "orta",
+      "explanation": "State, componentin zamanla değişen bilgisidir. useState ile bir değer ve onu güncelleyen fonksiyon alirsin.",
+      "learningGoals": [
+        "useState import etmek",
+        "Butonla state arttirmak"
+      ],
+      "task": "Sayac için useState kullan ve butona basinca count değerini arttir.",
+      "starterFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "export default function App() {\n  return <button>0</button>;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "import { useState } from \"react\";\n\nexport default function App() {\n  const [count, setCount] = useState(0);\n  return <button onClick={() => setCount(count + 1)}>{count}</button>;\n}"
+        }
+      ],
+      "hints": [
+        "useState react paketinden gelir.",
+        "onClick içinde setCount kullan."
+      ],
+      "checks": [
+        {
+          "id": "uses-state",
+          "label": "useState kullanıldi",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": "useState"
+        },
+        {
+          "id": "has-onclick",
+          "label": "onClick handler var",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": "onClick"
+        }
+      ],
+      "previousLessonId": "react-props",
+      "nextLessonId": "typescript-prop",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "typescript-prop",
+      "title": "TypeScript ile prop tipi verme",
+      "section": "TypeScript",
+      "difficulty": "orta",
+      "explanation": "TypeScript, componentin hangi veriyi bekledigini açık hale getirir. Bu, buyuk projelerde hatalari erken yakalar.",
+      "learningGoals": [
+        "Type alias tanimlamak",
+        "Props tipini componentte kullanmak"
+      ],
+      "task": "ButtonProps tipi oluştur ve label prop'unu string olarak tanimla.",
+      "starterFiles": [
+        {
+          "path": "Button.tsx",
+          "language": "tsx",
+          "content": "export function Button(props) {\n  return <button>{props.label}</button>;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "Button.tsx",
+          "language": "tsx",
+          "content": "type ButtonProps = {\n  label: string;\n};\n\nexport function Button(props: ButtonProps) {\n  return <button>{props.label}</button>;\n}"
+        }
+      ],
+      "hints": [
+        "type ButtonProps = { ... } yazabilirsin.",
+        "Fonksiyon parametresine : ButtonProps ekle."
+      ],
+      "checks": [
+        {
+          "id": "has-type",
+          "label": "ButtonProps tipi var",
+          "type": "code-contains",
+          "file": "Button.tsx",
+          "value": "type ButtonProps"
+        },
+        {
+          "id": "uses-type",
+          "label": "Props tipi kullanıliyor",
+          "type": "code-contains",
+          "file": "Button.tsx",
+          "value": ": ButtonProps"
+        }
+      ],
+      "previousLessonId": "react-state",
+      "nextLessonId": "tailwind-card",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "tailwind-card",
+      "title": "Tailwind ile kart tasarimi",
+      "section": "Tailwind CSS",
+      "difficulty": "orta",
+      "explanation": "Tailwind, CSS propertylerini class isimleriyle hizli uygulamana izin verir. Utility class'lar küçük tasarim kararlarini markup uzerinde görünur yapar.",
+      "learningGoals": [
+        "Utility class kullanmak",
+        "Kart görünümu oluşturmak"
+      ],
+      "task": "Article elementine padding, border, rounded ve shadow class'lari ekle.",
+      "starterFiles": [
+        {
+          "path": "Card.tsx",
+          "language": "tsx",
+          "content": "export function Card() {\n  return <article>Tailwind kart</article>;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "Card.tsx",
+          "language": "tsx",
+          "content": "export function Card() {\n  return <article className=\"rounded-lg border p-6 shadow-sm\">Tailwind kart</article>;\n}"
+        }
+      ],
+      "hints": [
+        "React'te class yerine className kullanılir.",
+        "rounded-lg, border, p-6, shadow-sm iyi bir başlangıç."
+      ],
+      "checks": [
+        {
+          "id": "has-classname",
+          "label": "className kullanıldi",
+          "type": "code-contains",
+          "file": "Card.tsx",
+          "value": "className"
+        },
+        {
+          "id": "has-rounded",
+          "label": "Rounded class'i var",
+          "type": "code-contains",
+          "file": "Card.tsx",
+          "value": "rounded"
+        }
+      ],
+      "previousLessonId": "typescript-prop",
+      "nextLessonId": "shadcn-button",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "shadcn-button",
+      "title": "shadcn/ui Button kullanimi",
+      "section": "shadcn/ui",
+      "difficulty": "orta",
+      "explanation": "shadcn/ui, kopyalanabilir ve ozellestirilebilir component kalibi verir. Component kodu projendedir, bu yuzden tasarim sistemine uyar.",
+      "learningGoals": [
+        "UI component import etmek",
+        "Variant ile niyet belirtmek"
+      ],
+      "task": "Button componentini import et ve primary aksiyon olarak kullan.",
+      "starterFiles": [
+        {
+          "path": "Example.tsx",
+          "language": "tsx",
+          "content": "export function Example() {\n  return <button>Kaydet</button>;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "Example.tsx",
+          "language": "tsx",
+          "content": "import { Button } from \"@/components/ui/button\";\n\nexport function Example() {\n  return <Button>Kaydet</Button>;\n}"
+        }
+      ],
+      "hints": [
+        "Import yolu @/components/ui/button olabilir.",
+        "Native button yerine Button componentini kullan."
+      ],
+      "checks": [
+        {
+          "id": "imports-button",
+          "label": "Button import edildi",
+          "type": "code-contains",
+          "file": "Example.tsx",
+          "value": "components/ui/button"
+        },
+        {
+          "id": "uses-button",
+          "label": "Button componenti kullanıldi",
+          "type": "code-contains",
+          "file": "Example.tsx",
+          "value": "<Button"
+        }
+      ],
+      "previousLessonId": "tailwind-card",
+      "nextLessonId": "next-app-router",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "next-app-router",
+      "title": "Next.js App Router ile ilk sayfa",
+      "section": "Next.js",
+      "difficulty": "orta",
+      "explanation": "Next.js App Router'da sayfalar app klasörundeki page.tsx dosyalariyla olusur. Route dosya sistemiyle eslesir.",
+      "learningGoals": [
+        "page.tsx mantigini anlamak",
+        "Default export sayfa componenti yazmak"
+      ],
+      "task": "app/page.tsx dosyasinda Home componenti oluştur ve bir h1 dondur.",
+      "starterFiles": [
+        {
+          "path": "app/page.tsx",
+          "language": "tsx",
+          "content": "export default function Home() {\n  return null;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "app/page.tsx",
+          "language": "tsx",
+          "content": "export default function Home() {\n  return <h1>İlk Next.js sayfam</h1>;\n}"
+        }
+      ],
+      "hints": [
+        "Next.js sayfa componenti default export edilir.",
+        "JSX olarak <h1> dondurebilirsin."
+      ],
+      "checks": [
+        {
+          "id": "default-home",
+          "label": "Default Home componenti var",
+          "type": "code-regex",
+          "file": "app/page.tsx",
+          "pattern": "export\\\\\\s+default\\\\\\s+function\\\\\\s+Home"
+        },
+        {
+          "id": "has-h1",
+          "label": "Sayfa h1 donduruyor",
+          "type": "code-contains",
+          "file": "app/page.tsx",
+          "value": "<h1>"
+        }
+      ],
+      "previousLessonId": "shadcn-button",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "nextLessonId": "npm-pnpm-temelleri",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "npm-pnpm-temelleri",
+      "title": "npm / pnpm temelleri",
+      "section": "Araçlar",
+      "difficulty": "başlangıç",
+      "explanation": "Modern frontend projeleri paket yoneticileriyle çalışır. npm veya pnpm, paket kurma, script çalıştırma ve bagimlilik yonetme isini ustlenir.",
+      "learningGoals": [
+        "package.json scriptlerini okumak",
+        "pnpm dev gibi komutlarin amacini anlamak"
+      ],
+      "task": "package.json içine dev scriptinin ne yaptigini anlatan bir description alani ekle.",
+      "starterFiles": [
+        {
+          "path": "package.json",
+          "language": "javascript",
+          "content": "{\n  \"scripts\": {\n    \"dev\": \"next dev\"\n  }\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "package.json",
+          "language": "javascript",
+          "content": "{\n  \"description\": \"Next.js geliştirme sunucusunu çalıştıran pratik proje\",\n  \"scripts\": {\n    \"dev\": \"next dev\"\n  }\n}"
+        }
+      ],
+      "hints": [
+        "JSON alanlari virgul ile ayrilir.",
+        "description en ust seviyede bir string olabilir."
+      ],
+      "checks": [
+        {
+          "id": "has-description",
+          "label": "description alani var",
+          "type": "code-contains",
+          "file": "package.json",
+          "value": "\\\"description\\\""
+        },
+        {
+          "id": "has-dev",
+          "label": "dev scripti korunuyor",
+          "type": "code-contains",
+          "file": "package.json",
+          "value": "\\\"dev\\\""
+        }
+      ],
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "previousLessonId": "next-app-router",
+      "nextLessonId": "git-github-temelleri",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "git-github-temelleri",
+      "title": "Git ve GitHub temelleri",
+      "section": "Araçlar",
+      "difficulty": "başlangıç",
+      "explanation": "Git kod gecmisini takip eder. GitHub bu gecmisi paylasmaya, incelemeye ve ekip olarak çalışmaya yardım eder.",
+      "learningGoals": [
+        "Commit mesajinin amacini anlamak",
+        "README ile proje açıklamak"
+      ],
+      "task": "README içine proje amacini ve ilk çalıştırma komutunu yaz.",
+      "starterFiles": [
+        {
+          "path": "README.md",
+          "language": "html",
+          "content": "# Projem\n\n"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "README.md",
+          "language": "html",
+          "content": "# Projem\n\nBu proje modern web geliştirme pratigi içindir.\n\nCalistirma:\n\n```bash\npnpm dev\n```\n"
+        }
+      ],
+      "hints": [
+        "README Markdown formatindadir.",
+        "Calistirma komutunu kod bloğu içinde yazabilirsin."
+      ],
+      "checks": [
+        {
+          "id": "mentions-project",
+          "label": "Proje amaci yazildi",
+          "type": "code-contains",
+          "file": "README.md",
+          "value": "modern web"
+        },
+        {
+          "id": "mentions-command",
+          "label": "Calistirma komutu var",
+          "type": "code-contains",
+          "file": "README.md",
+          "value": "pnpm dev"
+        }
+      ],
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "previousLessonId": "npm-pnpm-temelleri",
+      "nextLessonId": "proje-klasor-yapisi",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "proje-klasor-yapisi",
+      "title": "Proje klasör yapısı",
+      "section": "Modern alışkanlıklar",
+      "difficulty": "kolay",
+      "explanation": "Buyuyen projede dosyalari rastgele koymak yerine anlamlı klasörler oluşturmak gerekir. components, lib ve content gibi klasörler sorumluluklari ayirir.",
+      "learningGoals": [
+        "Klasorlerin sorumluluklarini ayirmak",
+        "Component ve helper kodunu karistirmamak"
+      ],
+      "task": "Klasor haritasinda components, lib ve content açıklamalarini tamamla.",
+      "starterFiles": [
+        {
+          "path": "structure.md",
+          "language": "html",
+          "content": "- src/components: \n- src/lib: \n- src/content: \n"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "structure.md",
+          "language": "html",
+          "content": "- src/components: Arayuz parçalari\n- src/lib: Tekrar kullanılan yardımci fonksiyonlar\n- src/content: Ders ve içerik verileri\n"
+        }
+      ],
+      "hints": [
+        "components ekranda görünen parçalardir.",
+        "lib daha çok mantik ve yardımci fonksiyonlar içindir."
+      ],
+      "checks": [
+        {
+          "id": "mentions-components",
+          "label": "components açıklandi",
+          "type": "code-contains",
+          "file": "structure.md",
+          "value": "Arayuz"
+        },
+        {
+          "id": "mentions-content",
+          "label": "content açıklandi",
+          "type": "code-contains",
+          "file": "structure.md",
+          "value": "Ders"
+        }
+      ],
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "previousLessonId": "git-github-temelleri",
+      "nextLessonId": "deployment-mantigi",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "deployment-mantigi",
+      "title": "Basit deployment mantığı",
+      "section": "Yayınlama",
+      "difficulty": "kolay",
+      "explanation": "Deployment, yerelde çalışan uygulamayi kullanıcılarin erisebilecegi bir ortama tasimaktir. Build komutu uygulamanin yayinlanabilir halini uretir.",
+      "learningGoals": [
+        "Build ve deploy farkini anlamak",
+        "Yayinlama kontrol listesi hazırlamak"
+      ],
+      "task": "Deployment öncesi üç maddelik bir kontrol listesi yaz.",
+      "starterFiles": [
+        {
+          "path": "deploy-checklist.html",
+          "language": "html",
+          "content": "<h1>Deployment kontrolü</h1>\n<ul>\n</ul>"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "deploy-checklist.html",
+          "language": "html",
+          "content": "<h1>Deployment kontrolü</h1>\n<ul>\n  <li>Build hatasiz geciyor</li>\n  <li>Sayfalar mobilde okunuyor</li>\n  <li>Gizli anahtarlar repoya yazilmadi</li>\n</ul>"
+        }
+      ],
+      "hints": [
+        "Kontrol listesi için li kullan.",
+        "Build, mobil ve gizli bilgi maddeleri iyi başlangıçtir."
+      ],
+      "checks": [
+        {
+          "id": "has-list-item",
+          "label": "Liste maddeleri var",
+          "type": "code-contains",
+          "file": "deploy-checklist.html",
+          "value": "<li>"
+        },
+        {
+          "id": "mentions-build",
+          "label": "Build kontrolü var",
+          "type": "preview-contains",
+          "value": "Build"
+        }
+      ],
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "previousLessonId": "proje-klasor-yapisi",
+      "nextLessonId": "modern-frontend-aliskanliklari",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "modern-frontend-aliskanliklari",
+      "title": "Modern frontend geliştirme alışkanlıkları",
+      "section": "Modern alışkanlıklar",
+      "difficulty": "kolay",
+      "explanation": "İyi frontend sadece çalışan kod değildir. Okunabilir isimler, küçük componentler, erişilebilirlik ve test edilebilirlik uzun vadede kaliteyi belirler.",
+      "learningGoals": [
+        "Kalite alışkanlıklarini listelemek",
+        "Kodu sürdürülebilir düşünmek"
+      ],
+      "task": "Modern frontend için üç iyi alışkanlığı kart olarak yaz.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"habits\">\n  <h1>Alışkanlıklar</h1>\n</section>"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"habits\">\n  <h1>Alışkanlıklar</h1>\n  <article>Anlamlı isimler kullan</article>\n  <article>Erisilebilir arayuz kur</article>\n  <article>Kucuk parçalar halinde geliştir</article>\n</section>"
+        }
+      ],
+      "hints": [
+        "Her alışkanlık için article kullanabilirsin.",
+        "Erisilebilirlik ve anlamlı isimler iyi örneklerdir."
+      ],
+      "checks": [
+        {
+          "id": "has-article",
+          "label": "Kartlar article ile yazildi",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "<article>"
+        },
+        {
+          "id": "mentions-accessibility",
+          "label": "Erisilebilirlik düşünuldu",
+          "type": "preview-contains",
+          "value": "Erisilebilir"
+        }
+      ],
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "previousLessonId": "deployment-mantigi",
+      "nextLessonId": "request-response-derin",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku.",
+        "Görevin istedigi satırı veya küçük bloğu ekle.",
+        "Preview ve Check ile sonucu doğrula."
+      ],
+      "commonMistakes": [
+        "Görev dışındaki kodu gereksiz değiştirmek.",
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
+      ],
+      "glossary": []
+    },
+    {
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "walkthrough": [
+        "Starter kodu oku ve eksik davranışı bul.",
+        "Tek bir ana fikri değiştir, baska seylere dokunma.",
+        "Check sonucuyla veya preview ile neden çalıştigini doğrula."
+      ],
+      "commonMistakes": [
+        "Bir derste birden fazla kavramı aynı anda değiştirmek.",
+        "Etiket, parantez veya tirnak kapatmayı unutmak."
+      ],
+      "glossary": [
+        {
+          "term": "Request",
+          "meaning": "Tarayıcınin sunucudan istedigi kaynak."
+        },
+        {
+          "term": "Response",
+          "meaning": "Sunucunun tarayıcıya verdigi cevap."
+        }
+      ],
+      "id": "request-response-derin",
+      "title": "Request ve response'u ekranda modelle",
+      "section": "Web çekirdeği",
+      "difficulty": "başlangıç",
+      "explanation": "Webin en temel ritmi istek ve cevaptir. Tarayıcı bir kaynak ister, sunucu HTML, CSS, JS veya veri ile cevap verir.",
+      "mentalModel": "Tarayıcıyi mesajci gibi düşün: adresi goturur, cevabi alir, kullanıcıya okunur hale getirir.",
+      "learningGoals": [
+        "Request ve response kavramlarini ayirmak",
+        "Tarayıcı-sunucu ilişkisini görsellestirmek"
+      ],
+      "task": "Kart içine Request ve Response için iki ayri madde ekle.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"flow\">\n  <h1>Web akisi</h1>\n</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".flow {\n  margin: 40px auto;\n  max-width: 520px;\n  padding: 24px;\n  border: 1px solid #d6c7b4;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"flow\">\n  <h1>Web akisi</h1>\n  <ol>\n    <li>Request: tarayıcı kaynak ister</li>\n    <li>Response: sunucu cevap verir</li>\n  </ol>\n</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".flow {\n  margin: 40px auto;\n  max-width: 520px;\n  padding: 24px;\n  border: 1px solid #d6c7b4;\n}"
+        }
+      ],
+      "hints": [
+        "Sirali akisi göstermek için ol kullan.",
+        "Iki kelime de ekranda görünmeli."
+      ],
+      "checks": [
+        {
+          "id": "has-ol",
+          "label": "Sirali liste var",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "<ol>"
+        },
+        {
+          "id": "has-response",
+          "label": "Response görünuyor",
+          "type": "preview-contains",
+          "value": "Response"
+        }
+      ],
+      "previousLessonId": "modern-frontend-aliskanliklari",
+      "nextLessonId": "dosya-baglama-derin",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ]
+    },
+    {
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "walkthrough": [
+        "Starter kodu oku ve eksik davranışı bul.",
+        "Tek bir ana fikri değiştir, baska seylere dokunma.",
+        "Check sonucuyla veya preview ile neden çalıştigini doğrula."
+      ],
+      "commonMistakes": [
+        "Bir derste birden fazla kavramı aynı anda değiştirmek.",
+        "Etiket, parantez veya tirnak kapatmayı unutmak."
+      ],
+      "glossary": [],
+      "id": "dosya-baglama-derin",
+      "title": "HTML, CSS ve JS dosyalarını bağla",
+      "section": "Web çekirdeği",
+      "difficulty": "kolay",
+      "explanation": "Gercek projelerde stiller ve davranışlar ayri dosyalara bolunur. HTML, link ve script ile bu dosyalari sayfaya cagirir.",
+      "learningGoals": [
+        "CSS dosyasini link ile bağlamak",
+        "JS dosyasini script ile bağlamak"
+      ],
+      "task": "index.html içine styles.css ve script.js bağlantılarıni ekle.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<html>\n  <head>\n    <title>Baglanti</title>\n  </head>\n  <body>\n    <h1>Dosyalar</h1>\n  </body>\n</html>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": "body { background: #eef8f4; }"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "document.body.dataset.ready = 'true';"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<html>\n  <head>\n    <title>Baglanti</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n  </head>\n  <body>\n    <h1>Dosyalar</h1>\n    <script src=\"script.js\"><\\/script>\n  </body>\n</html>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": "body { background: #eef8f4; }"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "document.body.dataset.ready = 'true';"
+        }
+      ],
+      "hints": [
+        "CSS head içinde link etiketiyle bağlanır.",
+        "script body sonunda durabilir."
+      ],
+      "checks": [
+        {
+          "id": "has-stylesheet",
+          "label": "Stylesheet linki var",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "rel=\\\"stylesheet\\\""
+        },
+        {
+          "id": "has-script-src",
+          "label": "Script src var",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "src=\\\"script.js\\\""
+        }
+      ],
+      "previousLessonId": "request-response-derin",
+      "nextLessonId": "semantik-html-derin",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ]
+    },
+    {
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "walkthrough": [
+        "Starter kodu oku ve eksik davranışı bul.",
+        "Tek bir ana fikri değiştir, baska seylere dokunma.",
+        "Check sonucuyla veya preview ile neden çalıştigini doğrula."
+      ],
+      "commonMistakes": [
+        "Bir derste birden fazla kavramı aynı anda değiştirmek.",
+        "Etiket, parantez veya tirnak kapatmayı unutmak."
+      ],
+      "glossary": [],
+      "id": "semantik-html-derin",
+      "title": "Div yerine semantik HTML",
+      "section": "HTML",
+      "difficulty": "kolay",
+      "explanation": "Semantik etiketler bölümun görevini anlatir. header, main, article ve footer hem kodu hem erişilebilirligi iyilestirir.",
+      "mentalModel": "Semantik HTML, binadaki oda tabelalari gibidir. Her sey div olursa hangi odada olduğunu anlamak zorlasir.",
+      "learningGoals": [
+        "header/main/footer kullanmak",
+        "article ile içerik parçası tanimlamak"
+      ],
+      "task": "Div yapisini semantik bölümlere ayir.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<div>\n  <h1>Gunluk</h1>\n  <p>Bugün HTML çalıştım.</p>\n  <small>2026</small>\n</div>"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<header>\n  <h1>Gunluk</h1>\n</header>\n<main>\n  <article>Bugün HTML çalıştım.</article>\n</main>\n<footer>\n  <small>2026</small>\n</footer>"
+        }
+      ],
+      "hints": [
+        "Ana görünen içerik main içine girer.",
+        "Alt bilgi footer için uygundur."
+      ],
+      "checks": [
+        {
+          "id": "has-header",
+          "label": "Header var",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "<header>"
+        },
+        {
+          "id": "has-main",
+          "label": "Main var",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "<main>"
+        },
+        {
+          "id": "has-footer",
+          "label": "Footer var",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "<footer>"
+        }
+      ],
+      "previousLessonId": "dosya-baglama-derin",
+      "nextLessonId": "form-label-baglanti",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ]
+    },
+    {
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "walkthrough": [
+        "Starter kodu oku ve eksik davranışı bul.",
+        "Tek bir ana fikri değiştir, baska seylere dokunma.",
+        "Check sonucuyla veya preview ile neden çalıştigini doğrula."
+      ],
+      "commonMistakes": [
+        "Bir derste birden fazla kavramı aynı anda değiştirmek.",
+        "Etiket, parantez veya tirnak kapatmayı unutmak."
+      ],
+      "glossary": [],
+      "id": "form-label-baglanti",
+      "title": "Formda label ve input bağlantısı",
+      "section": "HTML",
+      "difficulty": "orta",
+      "explanation": "Label, input alaninin ne istedigini açıklar. for ve id değerleri eslesirse tıklama ve ekran okuyucu deneyimi iyilesir.",
+      "learningGoals": [
+        "label for kullanmak",
+        "input id ile bağlamak",
+        "submit button eklemek"
+      ],
+      "task": "Email inputu için label yaz ve forma submit butonu ekle.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<form>\n  <input id=\"email\" type=\"email\">\n</form>"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<form>\n  <label for=\"email\">Email adresi</label>\n  <input id=\"email\" type=\"email\">\n  <button type=\"submit\">Kaydol</button>\n</form>"
+        }
+      ],
+      "hints": [
+        "label for değeri input id ile aynı olmali.",
+        "button type submit olabilir."
+      ],
+      "checks": [
+        {
+          "id": "has-label",
+          "label": "Label var",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "<label"
+        },
+        {
+          "id": "label-for",
+          "label": "Label inputa bagli",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "for=\\\"email\\\""
+        },
+        {
+          "id": "submit",
+          "label": "Submit butonu var",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "type=\\\"submit\\\""
+        }
+      ],
+      "previousLessonId": "semantik-html-derin",
+      "nextLessonId": "grid-responsive-derin",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ]
+    },
+    {
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "walkthrough": [
+        "Starter kodu oku ve eksik davranışı bul.",
+        "Tek bir ana fikri değiştir, baska seylere dokunma.",
+        "Check sonucuyla veya preview ile neden çalıştigini doğrula."
+      ],
+      "commonMistakes": [
+        "Bir derste birden fazla kavramı aynı anda değiştirmek.",
+        "Etiket, parantez veya tirnak kapatmayı unutmak."
+      ],
+      "glossary": [],
+      "id": "grid-responsive-derin",
+      "title": "Grid ile responsive kartlar",
+      "section": "CSS",
+      "difficulty": "orta",
+      "explanation": "Grid, satir ve sutunlari birlikte düşünmeni saglar. repeat, auto-fit ve minmax ile kartlar ekrana gore kırilir.",
+      "mentalModel": "Grid kareli kagittir. Kartlari sabit piksele kilitlemek yerine hucrelerin esnemesine izin verirsin.",
+      "learningGoals": [
+        "display grid kullanmak",
+        "repeat(auto-fit, minmax()) yazmak"
+      ],
+      "task": "Kart listesini responsive grid haline getir.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"cards\">\n  <article>HTML</article>\n  <article>CSS</article>\n  <article>JS</article>\n</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".cards article {\n  padding: 20px;\n  background: white;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"cards\">\n  <article>HTML</article>\n  <article>CSS</article>\n  <article>JS</article>\n</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".cards {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));\n  gap: 16px;\n}\n\n.cards article {\n  padding: 20px;\n  background: white;\n}"
+        }
+      ],
+      "hints": [
+        "Grid kapsayiciya yazılır.",
+        "minmax en küçük ve en buyuk kolon davranışıni belirler."
+      ],
+      "checks": [
+        {
+          "id": "has-grid",
+          "label": "Grid aktif",
+          "type": "code-contains",
+          "file": "styles.css",
+          "value": "display: grid"
+        },
+        {
+          "id": "has-template",
+          "label": "Kolon sablonu var",
+          "type": "code-contains",
+          "file": "styles.css",
+          "value": "grid-template-columns"
+        }
+      ],
+      "previousLessonId": "form-label-baglanti",
+      "nextLessonId": "media-query-derin",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ]
+    },
+    {
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "walkthrough": [
+        "Starter kodu oku ve eksik davranışı bul.",
+        "Tek bir ana fikri değiştir, baska seylere dokunma.",
+        "Check sonucuyla veya preview ile neden çalıştigini doğrula."
+      ],
+      "commonMistakes": [
+        "Bir derste birden fazla kavramı aynı anda değiştirmek.",
+        "Etiket, parantez veya tirnak kapatmayı unutmak."
+      ],
+      "glossary": [],
+      "id": "media-query-derin",
+      "title": "Media query ile kırılma noktası",
+      "section": "CSS",
+      "difficulty": "orta",
+      "explanation": "Responsive tasarimda mobil varsayilan olabilir. Belirli genişlikten sonra media query ile layout değiştirilir.",
+      "learningGoals": [
+        "@media yazmak",
+        "Mobil önce düşünmek"
+      ],
+      "task": "Genis ekranda iki kolonlu layout ac.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"layout\">\n  <aside>Menu</aside>\n  <main>Icerik</main>\n</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".layout {\n  display: grid;\n  gap: 16px;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"layout\">\n  <aside>Menu</aside>\n  <main>Icerik</main>\n</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".layout {\n  display: grid;\n  gap: 16px;\n}\n\n@media (min-width: 760px) {\n  .layout {\n    grid-template-columns: 240px 1fr;\n  }\n}"
+        }
+      ],
+      "hints": [
+        "@media (min-width: 760px) ile başla.",
+        "Sadece geniş ekranda kolon tanimla."
+      ],
+      "checks": [
+        {
+          "id": "has-media",
+          "label": "Media query var",
+          "type": "code-contains",
+          "file": "styles.css",
+          "value": "@media"
+        },
+        {
+          "id": "has-columns",
+          "label": "Iki kolon tanimli",
+          "type": "code-contains",
+          "file": "styles.css",
+          "value": "240px 1fr"
+        }
+      ],
+      "previousLessonId": "grid-responsive-derin",
+      "nextLessonId": "ui-state-toggle",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ]
+    },
+    {
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "walkthrough": [
+        "Starter kodu oku ve eksik davranışı bul.",
+        "Tek bir ana fikri değiştir, baska seylere dokunma.",
+        "Check sonucuyla veya preview ile neden çalıştigini doğrula."
+      ],
+      "commonMistakes": [
+        "Bir derste birden fazla kavramı aynı anda değiştirmek.",
+        "Etiket, parantez veya tirnak kapatmayı unutmak."
+      ],
+      "glossary": [],
+      "id": "ui-state-toggle",
+      "title": "UI state ile aç/kapat",
+      "section": "JavaScript",
+      "difficulty": "orta",
+      "explanation": "State, arayuzun o anki bilgisidir. Menu açık mi, sayaç kac, buton aktif mi gibi cevaplar state ile tutulur.",
+      "mentalModel": "State arayuzun hafızasidir. Hafiza değişince ekrani ona gore güncellersin.",
+      "learningGoals": [
+        "Boolean state kullanmak",
+        "classList.toggle ile ekran güncellemek"
+      ],
+      "task": "Butona tıklaninca panelin open classini aç/kapat.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<button id=\"toggle\">Ac / kapa</button>\n<section class=\"panel\">Panel</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".panel { display: none; }\n.panel.open { display: block; }"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "const button = document.querySelector('#toggle');\nconst panel = document.querySelector('.panel');\nlet open = false;"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<button id=\"toggle\">Ac / kapa</button>\n<section class=\"panel\">Panel</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".panel { display: none; }\n.panel.open { display: block; }"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "const button = document.querySelector('#toggle');\nconst panel = document.querySelector('.panel');\nlet open = false;\n\nbutton.addEventListener('click', () => {\n  open = !open;\n  panel.classList.toggle('open', open);\n});"
+        }
+      ],
+      "hints": [
+        "open = !open boolean değeri tersler.",
+        "classList.toggle ikinci argumanla kosullu çalışır."
+      ],
+      "checks": [
+        {
+          "id": "toggles-state",
+          "label": "State tersleniyor",
+          "type": "code-contains",
+          "file": "script.js",
+          "value": "open = !open"
+        },
+        {
+          "id": "toggles-class",
+          "label": "Class toggle var",
+          "type": "code-contains",
+          "file": "script.js",
+          "value": "classList.toggle"
+        }
+      ],
+      "previousLessonId": "media-query-derin",
+      "nextLessonId": "input-event-derin",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ]
+    },
+    {
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "walkthrough": [
+        "Starter kodu oku ve eksik davranışı bul.",
+        "Tek bir ana fikri değiştir, baska seylere dokunma.",
+        "Check sonucuyla veya preview ile neden çalıştigini doğrula."
+      ],
+      "commonMistakes": [
+        "Bir derste birden fazla kavramı aynı anda değiştirmek.",
+        "Etiket, parantez veya tirnak kapatmayı unutmak."
+      ],
+      "glossary": [],
+      "id": "input-event-derin",
+      "title": "Input event ile canlı metin",
+      "section": "JavaScript",
+      "difficulty": "orta",
+      "explanation": "input eventi, kullanıcı yazdikca çalışır. Form arayuzlerinde canli onizleme ve validasyon için temel taslardan biridir.",
+      "learningGoals": [
+        "input eventini dinlemek",
+        "Kullaniçinin yazdigi değeri okumak"
+      ],
+      "task": "Inputa yazilan metni preview paragrafina aninda aktar.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<input id=\"name\" placeholder=\"Adin\">\n<p id=\"preview\">Merhaba</p>"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "const input = document.querySelector('#name');\nconst preview = document.querySelector('#preview');"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<input id=\"name\" placeholder=\"Adin\">\n<p id=\"preview\">Merhaba</p>"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "const input = document.querySelector('#name');\nconst preview = document.querySelector('#preview');\n\ninput.addEventListener('input', () => {\n  preview.textContent = `Merhaba ${input.value}`;\n});"
+        }
+      ],
+      "hints": [
+        "Event adi input olmali.",
+        "input.value kullanıcınin yazdigi değerdir."
+      ],
+      "checks": [
+        {
+          "id": "has-input-listener",
+          "label": "Input eventi dinleniyor",
+          "type": "code-contains",
+          "file": "script.js",
+          "value": "addEventListener('input'"
+        },
+        {
+          "id": "uses-value",
+          "label": "Input value okunuyor",
+          "type": "code-contains",
+          "file": "script.js",
+          "value": "input.value"
+        }
+      ],
+      "previousLessonId": "ui-state-toggle",
+      "nextLessonId": "jsx-expression-derin",
+      "mentalModel": "Bu dersi tek bir küçük davranış gibi düşün: önce kodu oku, sonra yalnızca hedeflenen parçayı değiştir, en son sonucu kanıtla.",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ]
+    },
+    {
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "walkthrough": [
+        "Starter kodu oku ve eksik davranışı bul.",
+        "Tek bir ana fikri değiştir, baska seylere dokunma.",
+        "Check sonucuyla veya preview ile neden çalıştigini doğrula."
+      ],
+      "commonMistakes": [
+        "Bir derste birden fazla kavramı aynı anda değiştirmek.",
+        "Etiket, parantez veya tirnak kapatmayı unutmak."
+      ],
+      "glossary": [],
+      "id": "jsx-expression-derin",
+      "title": "JSX içinde JavaScript ifadesi",
+      "section": "React",
+      "difficulty": "kolay",
+      "explanation": "JSX HTML gibi görünur ama suslu parantez içinde JavaScript ifadesi çalıştırabilir. Veri ve görünüm boyle bağlanır.",
+      "mentalModel": "Suslu parantez JSX içinde açılan küçük JavaScript penceresidir.",
+      "learningGoals": [
+        "JSX içinde değişken kullanmak",
+        "Metin ve ifadeyi birlestirmek"
+      ],
+      "task": "course değişkenini h1 içinde kullan.",
+      "starterFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "export default function App() {\n  const course = 'React';\n  return <h1>Kurs</h1>;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "export default function App() {\n  const course = 'React';\n  return <h1>{course} kursu</h1>;\n}"
+        }
+      ],
+      "hints": [
+        "JSX içinde {course} yaz.",
+        "Metinle ifadeyi aynı h1 içinde kullanabilirsin."
+      ],
+      "checks": [
+        {
+          "id": "uses-expression",
+          "label": "JSX ifade kullanıldi",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": "{course}"
+        },
+        {
+          "id": "has-variable",
+          "label": "course değişkeni var",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": "const course"
+        }
+      ],
+      "previousLessonId": "input-event-derin",
+      "nextLessonId": "react-list-key-derin",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ]
+    },
+    {
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "walkthrough": [
+        "Starter kodu oku ve eksik davranışı bul.",
+        "Tek bir ana fikri değiştir, baska seylere dokunma.",
+        "Check sonucuyla veya preview ile neden çalıştigini doğrula."
+      ],
+      "commonMistakes": [
+        "Bir derste birden fazla kavramı aynı anda değiştirmek.",
+        "Etiket, parantez veya tirnak kapatmayı unutmak."
+      ],
+      "glossary": [],
+      "id": "react-list-key-derin",
+      "title": "Liste render ve key",
+      "section": "React",
+      "difficulty": "orta",
+      "explanation": "Dizi verilerini map ile JSX listesine cevirebilirsin. key, Reactin hangi satırın hangisi olduğunu takip etmesini saglar.",
+      "mentalModel": "Key, listedeki her satırın kimlik kartidir. Siralama değişse bile React satırı taniyabilir.",
+      "learningGoals": [
+        "map ile render etmek",
+        "key prop kullanmak"
+      ],
+      "task": "topics dizisini li listesine cevir ve key ver.",
+      "starterFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "const topics = ['HTML', 'CSS', 'JavaScript'];\n\nexport default function App() {\n  return <ul></ul>;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "const topics = ['HTML', 'CSS', 'JavaScript'];\n\nexport default function App() {\n  return (\n    <ul>\n      {topics.map((topic) => (\n        <li key={topic}>{topic}</li>\n      ))}\n    </ul>\n  );\n}"
+        }
+      ],
+      "hints": [
+        "topics.map ile don.",
+        "li elementine key={topic} ver."
+      ],
+      "checks": [
+        {
+          "id": "uses-map",
+          "label": "map kullanıldi",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": ".map"
+        },
+        {
+          "id": "has-key",
+          "label": "key prop var",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": "key="
+        }
+      ],
+      "previousLessonId": "jsx-expression-derin",
+      "nextLessonId": "react-render-dongusu-derin",
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ]
+    },
+    {
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "walkthrough": [
+        "Starter kodu oku ve eksik davranışı bul.",
+        "Tek bir ana fikri değiştir, baska seylere dokunma.",
+        "Check sonucuyla veya preview ile neden çalıştigini doğrula."
+      ],
+      "commonMistakes": [
+        "Bir derste birden fazla kavramı aynı anda değiştirmek.",
+        "Etiket, parantez veya tirnak kapatmayı unutmak."
+      ],
+      "glossary": [],
+      "id": "react-render-dongusu-derin",
+      "title": "State ve render döngüsü",
+      "section": "React",
+      "difficulty": "orta",
+      "explanation": "Reactte state değişince component yeniden render edilir. Ekrani direkt değiştirmek yerine statei değiştirirsin.",
+      "mentalModel": "State skordur, render skor tabelasidir. Skoru değiştirince tabela yeniden yazılır.",
+      "learningGoals": [
+        "useState kullanmak",
+        "Event ile state güncellemek"
+      ],
+      "task": "Butona basinca count stateini bir arttir.",
+      "starterFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "import { useState } from 'react';\n\nexport default function App() {\n  const [count, setCount] = useState(0);\n  return <button>{count}</button>;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "import { useState } from 'react';\n\nexport default function App() {\n  const [count, setCount] = useState(0);\n  return <button onClick={() => setCount(count + 1)}>{count}</button>;\n}"
+        }
+      ],
+      "hints": [
+        "onClick eventini butona ver.",
+        "setCount(count + 1) statei günceller."
+      ],
+      "checks": [
+        {
+          "id": "has-onclick",
+          "label": "onClick var",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": "onClick"
+        },
+        {
+          "id": "has-set-count",
+          "label": "setCount kullanıldi",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": "setCount"
+        }
+      ],
+      "previousLessonId": "react-list-key-derin",
+      "nextLessonId": null,
+      "instructorNotes": [
+        "Ders küçük tutulur; kullanıcı önce kavramı gorur, sonra koda dokunur.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ]
+    }
+  ]
+}
