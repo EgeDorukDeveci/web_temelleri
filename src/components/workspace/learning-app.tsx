@@ -8,12 +8,16 @@ import type {
   SetStateAction
 } from "react";
 import {
+  AlertTriangle,
+  BookMarked,
   BookOpen,
   CheckCircle2,
+  CircleDot,
   Clipboard,
   Code2,
   Eye,
   FileText,
+  GraduationCap,
   Lightbulb,
   ListChecks,
   Moon,
@@ -27,8 +31,12 @@ import {
 import { tutorial } from "@/content/web-fundamentals";
 import type { Lesson, StoredProgress } from "@/content/types";
 import { buildAiPrompt } from "@/lib/ai-prompt";
-import { runLessonChecks, type CheckResult } from "@/lib/checks";
+import {
+  runLessonChecks,
+  type CheckResult
+} from "@/lib/checks";
 import { buildPreviewDocument, filesToRecord } from "@/lib/preview";
+import { explainLikelyErrors, type LearningIssue } from "@/lib/error-explainer";
 import { createInitialProgress, loadProgress, saveProgress } from "@/lib/storage";
 import { cn } from "@/lib/utils";
 import { CodeEditor } from "@/components/editor/code-editor";
@@ -43,6 +51,17 @@ const mobileTabs = [
 ] as const;
 
 type MobileTab = (typeof mobileTabs)[number]["id"];
+
+type ConceptCard = {
+  term: string;
+  meaning: string;
+};
+
+type LessonStepItem = {
+  title: string;
+  detail: string;
+  completed: boolean;
+};
 
 type DesktopLayout = {
   lessonWidth: number;
@@ -71,6 +90,111 @@ function readLayoutValue(
     : fallback;
 }
 
+const conceptCatalog: Array<ConceptCard & { match: RegExp }> = [
+  {
+    term: "HTML etiketi",
+    meaning: "Sayfadaki bir parçaya anlam veren açılış ve kapanış yapısıdır.",
+    match: /\b(html|h1|p|section|article|main|etiket)\b/i
+  },
+  {
+    term: "Attribute",
+    meaning: "Bir etikete ek bilgi veren href, src, alt veya id gibi değerdir.",
+    match: /\b(attribute|href|src|alt|id|for|input|label)\b/i
+  },
+  {
+    term: "CSS seçici",
+    meaning: "Stilin hangi HTML parçasına uygulanacağını söyler; class seçici nokta ile başlar.",
+    match: /\b(css|class|seçici|padding|margin|border|grid|flex)\b/i
+  },
+  {
+    term: "DOM",
+    meaning: "Tarayıcının HTML'i JavaScript ile seçilebilir ve değiştirilebilir canlı ağaç halidir.",
+    match: /\b(dom|queryselector|classlist|document)\b/i
+  },
+  {
+    term: "Event",
+    meaning: "Tıklama veya yazı yazma gibi kullanıcı hareketidir; JavaScript bu olayları dinleyebilir.",
+    match: /\b(event|click|input|addeventlistener|tıkla)\b/i
+  },
+  {
+    term: "State",
+    meaning: "Arayüzün o anki bilgisidir; değiştiğinde ekran da güncellenir.",
+    match: /\b(state|usestate|count|open|setcount)\b/i
+  },
+  {
+    term: "Component",
+    meaning: "Tekrar kullanılabilen küçük arayüz parçasıdır.",
+    match: /\b(component|props|react|jsx|tsx)\b/i
+  },
+  {
+    term: "Responsive",
+    meaning: "Layout'un farklı ekran genişliklerinde okunabilir kalmasıdır.",
+    match: /\b(responsive|media query|minmax|auto-fit|grid)\b/i
+  },
+  {
+    term: "Build",
+    meaning: "Uygulamanın paylaşılabilir, yayınlanabilir hale hazırlanmasıdır.",
+    match: /\b(build|deployment|deploy|package\.json|pnpm|npm)\b/i
+  }
+];
+
+function lessonSearchText(lesson: Lesson) {
+  return [
+    lesson.title,
+    lesson.section,
+    lesson.explanation,
+    lesson.task,
+    lesson.learningGoals.join(" "),
+    lesson.hints.join(" "),
+    lesson.starterFiles.map((file) => file.content).join(" ")
+  ].join(" ");
+}
+
+function buildConceptCards(lesson: Lesson) {
+  const searchText = lessonSearchText(lesson);
+  const fromCatalog = conceptCatalog
+    .filter((item) => item.match.test(searchText))
+    .slice(0, 4)
+    .map(({ term, meaning }) => ({ term, meaning }));
+  const fromGlossary = lesson.glossary ?? [];
+  const seen = new Set<string>();
+
+  return [...fromGlossary, ...fromCatalog].filter((card) => {
+    const key = card.term.toLocaleLowerCase("tr");
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }).slice(0, 4);
+}
+
+function buildLessonSteps(lesson: Lesson, checkResult: CheckResult | null): LessonStepItem[] {
+  const primaryFile = lesson.starterFiles[0]?.path ?? "ilk dosya";
+  const checkItems = checkResult?.items ?? [];
+  const anyCheckPassed = checkItems.some((item) => item.passed);
+
+  return [
+    {
+      title: "Dosyayı bul",
+      detail: `${primaryFile} dosyasından başla; görev başka dosya istiyorsa sekmelerden ona geç.`,
+      completed: true
+    },
+    {
+      title: "Görevi küçült",
+      detail: lesson.task,
+      completed: anyCheckPassed
+    },
+    ...lesson.checks.slice(0, 3).map((check) => {
+      const result = checkItems.find((item) => item.id === check.id);
+
+      return {
+        title: check.label,
+        detail: result?.nextAction ?? "Kontrol etmeden önce bu hedefi kodda görünür hale getirmeye çalış.",
+        completed: result?.passed ?? false
+      };
+    })
+  ];
+}
+
 export function LearningApp() {
   const [progress, setProgress] = useState<StoredProgress>(() =>
     createInitialProgress(tutorial.lessons)
@@ -96,6 +220,10 @@ export function LearningApp() {
   const lessonProgress = progress.lessons[activeLesson.id];
   const currentFiles = lessonProgress?.files ?? filesToRecord(activeLesson.starterFiles);
   const previewDoc = buildPreviewDocument(currentFiles, { darkMode });
+  const learningIssues = useMemo(
+    () => explainLikelyErrors(currentFiles),
+    [currentFiles]
+  );
   const completedCount = Object.values(progress.lessons).filter(
     (item) => item.completed
   ).length;
@@ -332,6 +460,7 @@ export function LearningApp() {
             currentFiles={currentFiles}
             hintIndex={hintIndex}
             lessonProgress={lessonProgress}
+            learningIssues={learningIssues}
             onCheck={checkAnswer}
             onCopyAiPrompt={copyAiPrompt}
             onHint={() =>
@@ -394,6 +523,7 @@ export function LearningApp() {
               currentFiles={currentFiles}
               hintIndex={hintIndex}
               lessonProgress={lessonProgress}
+              learningIssues={learningIssues}
               mobile
               onCheck={checkAnswer}
               onCopyAiPrompt={copyAiPrompt}
@@ -536,6 +666,7 @@ function LessonPanel({
   currentFiles,
   checkResult,
   hintIndex,
+  learningIssues,
   completedCount,
   totalCount,
   copyState,
@@ -555,6 +686,7 @@ function LessonPanel({
   currentFiles: Record<string, string>;
   checkResult: CheckResult | null;
   hintIndex: number;
+  learningIssues: LearningIssue[];
   completedCount: number;
   totalCount: number;
   copyState: "idle" | "copied";
@@ -619,6 +751,11 @@ function LessonPanel({
             </h3>
             <p className="text-sm leading-6">{activeLesson.task}</p>
           </div>
+          <LessonStepGuide lesson={activeLesson} checkResult={checkResult} />
+          <ConceptGuide lesson={activeLesson} />
+          {learningIssues.length > 0 && (
+            <ErrorGuide issues={learningIssues} />
+          )}
         </section>
 
         <section className="mt-4 grid gap-3">
@@ -709,17 +846,30 @@ function LessonPanel({
             </h3>
             <ul className="space-y-1 text-sm">
               {checkResult.items.map((item) => (
-                <li className="flex items-center gap-2" key={item.id}>
+                <li className="flex gap-2" key={item.id}>
                   <span
                     className={cn(
-                      "h-2 w-2 rounded-full",
+                      "mt-1.5 h-2 w-2 shrink-0 rounded-full",
                       item.passed ? "bg-success" : "bg-destructive"
                     )}
                   />
-                  {item.label}
+                  <span>
+                    <span className="font-medium">{item.label}</span>
+                    <span className="mt-0.5 block text-xs leading-5 text-muted-foreground">
+                      {item.feedback}
+                    </span>
+                    {!item.passed && (
+                      <span className="mt-1 block text-xs leading-5">
+                        {item.nextAction}
+                      </span>
+                    )}
+                  </span>
                 </li>
               ))}
             </ul>
+            {checkResult.passed && (
+              <LessonRecap lesson={activeLesson} />
+            )}
           </section>
         )}
 
@@ -800,6 +950,121 @@ function LessonPanel({
     </aside>
   );
 
+}
+
+function LessonStepGuide({
+  lesson,
+  checkResult
+}: {
+  lesson: Lesson;
+  checkResult: CheckResult | null;
+}) {
+  const steps = buildLessonSteps(lesson, checkResult);
+
+  return (
+    <div className="rounded-md border bg-background p-3">
+      <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold">
+        <ListChecks className="h-4 w-4" />
+        Adım adım
+      </h3>
+      <ol className="space-y-2">
+        {steps.map((step, index) => (
+          <li className="flex gap-2 text-sm" key={`${step.title}-${index}`}>
+            <span
+              className={cn(
+                "flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-[11px] font-semibold",
+                step.completed
+                  ? "bg-success text-success-foreground"
+                  : "bg-muted text-muted-foreground"
+              )}
+            >
+              {step.completed ? "✓" : index + 1}
+            </span>
+            <span>
+              <span className="font-medium">{step.title}</span>
+              <span className="block text-xs leading-5 text-muted-foreground">
+                {step.detail}
+              </span>
+            </span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
+function ConceptGuide({ lesson }: { lesson: Lesson }) {
+  const concepts = buildConceptCards(lesson);
+
+  if (concepts.length === 0) return null;
+
+  return (
+    <div className="rounded-md border bg-muted/25 p-3">
+      <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold">
+        <BookMarked className="h-4 w-4" />
+        Kavram rehberi
+      </h3>
+      <div className="grid gap-2">
+        {concepts.map((concept) => (
+          <div className="rounded-md border bg-background px-3 py-2" key={concept.term}>
+            <div className="text-xs font-semibold">{concept.term}</div>
+            <p className="mt-1 text-xs leading-5 text-muted-foreground">
+              {concept.meaning}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ErrorGuide({ issues }: { issues: LearningIssue[] }) {
+  return (
+    <div className="rounded-md border border-accent/30 bg-accent/10 p-3">
+      <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold">
+        <AlertTriangle className="h-4 w-4 text-accent" />
+        Hata rehberi
+      </h3>
+      <ul className="space-y-2">
+        {issues.map((issue) => (
+          <li className="text-sm" key={`${issue.file}-${issue.title}`}>
+            <div className="flex items-center gap-2 font-medium">
+              <CircleDot className="h-3.5 w-3.5 text-accent" />
+              {issue.file}: {issue.title}
+            </div>
+            <p className="mt-1 text-xs leading-5 text-muted-foreground">
+              {issue.explanation}
+            </p>
+            <p className="mt-1 text-xs leading-5">{issue.fix}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function LessonRecap({ lesson }: { lesson: Lesson }) {
+  return (
+    <div className="mt-4 rounded-md border bg-background/75 p-3">
+      <h4 className="mb-2 flex items-center gap-2 text-sm font-semibold">
+        <GraduationCap className="h-4 w-4 text-success" />
+        Ders özeti
+      </h4>
+      <ul className="space-y-1 text-xs leading-5 text-muted-foreground">
+        {lesson.learningGoals.map((goal) => (
+          <li className="flex gap-2" key={goal}>
+            <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-success" />
+            <span>{goal}</span>
+          </li>
+        ))}
+      </ul>
+      {lesson.mentalModel && (
+        <p className="mt-2 text-xs leading-5 text-muted-foreground">
+          {lesson.mentalModel}
+        </p>
+      )}
+    </div>
+  );
 }
 
 function EditorPreviewPanel({

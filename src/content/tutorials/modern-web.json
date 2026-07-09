@@ -111,6 +111,17 @@
         "deployment-mantigi",
         "modern-frontend-aliskanliklari"
       ]
+    },
+    {
+      "id": "mini-projeler",
+      "title": "Mini projeler",
+      "description": "Öğrendiklerini küçük, tamamlanmış arayüz parçalarında birleştir.",
+      "lessonIds": [
+        "mini-proje-profil-karti",
+        "mini-proje-urun-grid",
+        "mini-proje-todo-panel",
+        "mini-proje-react-sayac"
+      ]
     }
   ],
   "lessons": [
@@ -195,7 +206,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -221,7 +232,7 @@
         {
           "path": "index.html",
           "language": "html",
-          "content": "<main>\n  <h1>İlk HTML sayfam</h1>\n  <p>Bugün web sayfası oluşturmayi öğreniyorum.</p>\n</main>"
+          "content": "<main>\n  <h1>İlk HTML sayfam</h1>\n  <p>Bugün web sayfası oluşturmayı öğreniyorum.</p>\n</main>"
         }
       ],
       "hints": [
@@ -261,7 +272,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -327,7 +338,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -393,7 +404,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -412,7 +423,7 @@
         {
           "path": "index.html",
           "language": "html",
-          "content": "<article class=\"card\">\n  <h1>CSS karti</h1>\n  <p>Stil sayfayı okunur hale getirir.</p>\n</article>"
+          "content": "<article class=\"card\">\n  <h1>CSS kartı</h1>\n  <p>Stil sayfayı okunur hale getirir.</p>\n</article>"
         },
         {
           "path": "styles.css",
@@ -424,7 +435,7 @@
         {
           "path": "index.html",
           "language": "html",
-          "content": "<article class=\"card\">\n  <h1>CSS karti</h1>\n  <p>Stil sayfayı okunur hale getirir.</p>\n</article>"
+          "content": "<article class=\"card\">\n  <h1>CSS kartı</h1>\n  <p>Stil sayfayı okunur hale getirir.</p>\n</article>"
         },
         {
           "path": "styles.css",
@@ -469,7 +480,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -545,7 +556,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -621,7 +632,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -697,7 +708,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -706,7 +717,7 @@
       "title": "DOM'dan element seçme",
       "section": "JavaScript",
       "difficulty": "kolay",
-      "explanation": "DOM, HTML'in JavaScript tarafindaki temsilidir. querySelector ile sayfadaki bir elementi secip okuyabilir veya değiştirebilirsin.",
+      "explanation": "DOM, HTML'in JavaScript tarafındaki temsilidir. querySelector ile sayfadaki bir elementi seçip okuyabilir veya değiştirebilirsin.",
       "learningGoals": [
         "querySelector kullanmak",
         "Class eklemek"
@@ -783,7 +794,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -815,7 +826,7 @@
       "hints": [
         "React component, tekrar kullanılabilir küçük bir arayüz fonksiyonudur; adı büyük harfle başlamalıdır.",
         "WelcomeCard adında bir function yaz ve içinden JSX döndür: return (...) yapısı burada işini kolaylaştırır.",
-        "Component içinde en az bir <h1> olmalıııı; h1 kullanıcıya görünen başlığı temsil eder.",
+        "Component içinde en az bir <h1> olmalı; h1 kullanıcıya görünen başlığı temsil eder.",
         "Componenti yazmak yetmez, App içinde <WelcomeCard /> şeklinde kullanarak ekrana dahil etmelisin."
       ],
       "checks": [
@@ -849,7 +860,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -882,7 +893,7 @@
         "Props, component'e dışarıdan verilen bilgidir; bu derste CourseCard başlığı kendisi yazmak yerine prop'tan alacak.",
         "Fonksiyon parametresinde { title } kullanırsan title değerini doğrudan JSX içinde kullanabilirsin.",
         "TypeScript için prop tipini açık yaz: { title: string } veya ayrı bir type tanımı kullan.",
-        "App içinde <CourseCard title=\"...\" /> gibi bir kullanım olmalıııı; sonra component içinde {title} ekrana basılmalı."
+        "App içinde <CourseCard title=\"...\" /> gibi bir kullanım olmalı; sonra component içinde {title} ekrana basılmalı."
       ],
       "checks": [
         {
@@ -915,7 +926,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -981,7 +992,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -1047,7 +1058,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -1113,7 +1124,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -1179,7 +1190,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -1211,7 +1222,7 @@
       "hints": [
         "Next.js App Router'da app/page.tsx ana sayfayı temsil eder; bu dosyadaki default export ekrana gelir.",
         "Home adında bir function oluşturabilir ve en altta export default Home yazabilirsin.",
-        "Fonksiyonun return değeri JSX olmalıııı; örneğin bir <main> içinde <h1> döndürmek iyi bir başlangıçtır.",
+        "Fonksiyonun return değeri JSX olmalı; örneğin bir <main> içinde <h1> döndürmek iyi bir başlangıçtır.",
         "Check h1 ve default export bekler; component'i yazıp export etmeyi unutma."
       ],
       "checks": [
@@ -1245,7 +1256,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -1276,7 +1287,7 @@
       ],
       "hints": [
         "package.json bir JSON dosyasıdır; burada her alan anahtar-değer şeklinde yazılır.",
-        "description üst seviyede olmalıııı, yani scripts bloğunun içine değil name ve version gibi alanların yanına yazılmalı.",
+        "description üst seviyede olmalı, yani scripts bloğunun içine değil name ve version gibi alanların yanına yazılmalı.",
         "JSON'da string değerler çift tırnakla yazılır ve alanlar virgülle ayrılır.",
         "Bir virgül eksik veya fazla olursa dosya geçersiz olur; değişiklikten sonra parantez ve virgülleri dikkatle kontrol et."
       ],
@@ -1311,7 +1322,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -1377,7 +1388,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -1443,7 +1454,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -1508,7 +1519,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -1541,7 +1552,7 @@
         "Burada her iyi alışkanlığı ayrı bir kart gibi düşün; her kart için article kullanmak anlamlı olur.",
         "Örnek alışkanlıklar: anlamlı isimler, küçük componentler, erişilebilir buton/label kullanımı, test edilebilir kod.",
         "Sadece kelime listesi yazmak yerine her article içine kısa bir açıklama ekle.",
-        "Check article yapısını ve alışkanlık metinlerini arar; üç ayrı fikir görünür olmalıııı."
+        "Check article yapısını ve alışkanlık metinlerini arar; üç ayrı fikir görünür olmalı."
       ],
       "checks": [
         {
@@ -1573,7 +1584,7 @@
       ],
       "commonMistakes": [
         "Görev dışındaki kodu gereksiz değiştirmek.",
-        "Açılan etiketi veya parantezi kapatmayıııı unutmak."
+        "Açılan etiketi veya parantezi kapatmayı unutmak."
       ],
       "glossary": []
     },
@@ -1586,7 +1597,7 @@
       ],
       "commonMistakes": [
         "Bir derste birden fazla kavramı aynı anda değiştirmek.",
-        "Etiket, parantez veya tırnak kapatmayıııı unutmak."
+        "Etiket, parantez veya tırnak kapatmayı unutmak."
       ],
       "glossary": [
         {
@@ -1670,7 +1681,7 @@
       ],
       "commonMistakes": [
         "Bir derste birden fazla kavramı aynı anda değiştirmek.",
-        "Etiket, parantez veya tırnak kapatmayıııı unutmak."
+        "Etiket, parantez veya tırnak kapatmayı unutmak."
       ],
       "glossary": [],
       "id": "dosya-baglama-derin",
@@ -1721,7 +1732,7 @@
         "Bu görev üç dosyanın birbirine nasıl bağlandığını gösterir; asıl değişiklik index.html içinde yapılır.",
         "CSS dosyası <head> içinde <link rel=\"stylesheet\" href=\"styles.css\" /> ile bağlanır.",
         "JavaScript dosyası genelde </body> kapanmadan önce <script src=\"script.js\"></script> ile eklenir.",
-        "Dosya adları birebir aynı olmalıııı; styles.css yerine style.css yazarsan bağlantı çalışmaz."
+        "Dosya adları birebir aynı olmalı; styles.css yerine style.css yazarsan bağlantı çalışmaz."
       ],
       "checks": [
         {
@@ -1756,7 +1767,7 @@
       ],
       "commonMistakes": [
         "Bir derste birden fazla kavramı aynı anda değiştirmek.",
-        "Etiket, parantez veya tırnak kapatmayıııı unutmak."
+        "Etiket, parantez veya tırnak kapatmayı unutmak."
       ],
       "glossary": [],
       "id": "semantik-html-derin",
@@ -1829,7 +1840,7 @@
       ],
       "commonMistakes": [
         "Bir derste birden fazla kavramı aynı anda değiştirmek.",
-        "Etiket, parantez veya tırnak kapatmayıııı unutmak."
+        "Etiket, parantez veya tırnak kapatmayı unutmak."
       ],
       "glossary": [],
       "id": "form-label-baglanti",
@@ -1859,7 +1870,7 @@
       ],
       "hints": [
         "Formlarda label, input'un ne istediğini açıklar; özellikle erişilebilirlik için çok önemlidir.",
-        "label'ın for değeri, input'un id değeriyle aynı olmalıııı: for=\"email\" ve id=\"email\" gibi.",
+        "label'ın for değeri, input'un id değeriyle aynı olmalı: for=\"email\" ve id=\"email\" gibi.",
         "Email alanı için input type=\"email\" kullanmak tarayıcıya bu alanın e-posta beklediğini söyler.",
         "Submit butonu formu göndermek için type=\"submit\" olabilir; buton metni kullanıcıya ne olacağını anlatmalı."
       ],
@@ -1903,7 +1914,7 @@
       ],
       "commonMistakes": [
         "Bir derste birden fazla kavramı aynı anda değiştirmek.",
-        "Etiket, parantez veya tırnak kapatmayıııı unutmak."
+        "Etiket, parantez veya tırnak kapatmayı unutmak."
       ],
       "glossary": [],
       "id": "grid-responsive-derin",
@@ -1979,7 +1990,7 @@
       ],
       "commonMistakes": [
         "Bir derste birden fazla kavramı aynı anda değiştirmek.",
-        "Etiket, parantez veya tırnak kapatmayıııı unutmak."
+        "Etiket, parantez veya tırnak kapatmayı unutmak."
       ],
       "glossary": [],
       "id": "media-query-derin",
@@ -2055,7 +2066,7 @@
       ],
       "commonMistakes": [
         "Bir derste birden fazla kavramı aynı anda değiştirmek.",
-        "Etiket, parantez veya tırnak kapatmayıııı unutmak."
+        "Etiket, parantez veya tırnak kapatmayı unutmak."
       ],
       "glossary": [],
       "id": "ui-state-toggle",
@@ -2141,7 +2152,7 @@
       ],
       "commonMistakes": [
         "Bir derste birden fazla kavramı aynı anda değiştirmek.",
-        "Etiket, parantez veya tırnak kapatmayıııı unutmak."
+        "Etiket, parantez veya tırnak kapatmayı unutmak."
       ],
       "glossary": [],
       "id": "input-event-derin",
@@ -2217,7 +2228,7 @@
       ],
       "commonMistakes": [
         "Bir derste birden fazla kavramı aynı anda değiştirmek.",
-        "Etiket, parantez veya tırnak kapatmayıııı unutmak."
+        "Etiket, parantez veya tırnak kapatmayı unutmak."
       ],
       "glossary": [],
       "id": "jsx-expression-derin",
@@ -2283,7 +2294,7 @@
       ],
       "commonMistakes": [
         "Bir derste birden fazla kavramı aynı anda değiştirmek.",
-        "Etiket, parantez veya tırnak kapatmayıııı unutmak."
+        "Etiket, parantez veya tırnak kapatmayı unutmak."
       ],
       "glossary": [],
       "id": "react-list-key-derin",
@@ -2291,7 +2302,7 @@
       "section": "React",
       "difficulty": "orta",
       "explanation": "Dizi verilerini map ile JSX listesine çevirebilirsin. key, React'in hangi satırın hangisi olduğunu takip etmesini sağlar.",
-      "mentalModel": "Key, listedeki her satırın kimlik kartidir. Siralama değişse bile React satırı taniyabilir.",
+      "mentalModel": "Key, listedeki her satırın kimlik kartıdır. Sıralama değişse bile React satırı tanıyabilir.",
       "learningGoals": [
         "map ile render etmek",
         "key prop kullanmak"
@@ -2349,7 +2360,7 @@
       ],
       "commonMistakes": [
         "Bir derste birden fazla kavramı aynı anda değiştirmek.",
-        "Etiket, parantez veya tırnak kapatmayıııı unutmak."
+        "Etiket, parantez veya tırnak kapatmayı unutmak."
       ],
       "glossary": [],
       "id": "react-render-dongusu-derin",
@@ -2400,11 +2411,337 @@
         }
       ],
       "previousLessonId": "react-list-key-derin",
-      "nextLessonId": null,
+      "nextLessonId": "mini-proje-profil-karti",
       "instructorNotes": [
         "Ders küçük tutulur; kullanıcı önce kavramı görür, sonra koda dokunur.",
         "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
       ]
+    },
+    {
+      "id": "mini-proje-profil-karti",
+      "title": "Mini proje: profil kartı",
+      "section": "Mini projeler",
+      "difficulty": "kolay",
+      "explanation": "Bu projede HTML ve CSS bilgisini birleştirerek küçük bir profil kartı oluşturacaksın. Amaç tek bir etiketi değil, bütün bir parçayı düzenli kurmak.",
+      "learningGoals": [
+        "HTML ile anlamlı kart yapısı kurmak",
+        "CSS ile okunabilir ve dengeli kart tasarlamak",
+        "Preview ile görsel sonucu kontrol etmek"
+      ],
+      "task": "Profil kartına isim, kısa açıklama ve iki beceri maddesi ekle; kartı CSS ile düzenle.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<article class=\"profile-card\">\n  <h1></h1>\n  <p></p>\n</article>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": "body {\n  background: #f7efe2;\n  font-family: system-ui;\n}\n\n.profile-card {\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<article class=\"profile-card\">\n  <h1>Ayşe Kaya</h1>\n  <p>Frontend öğreniyorum ve erişilebilir arayüzler kurmak istiyorum.</p>\n  <ul>\n    <li>HTML semantiği</li>\n    <li>CSS layout</li>\n  </ul>\n</article>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": "body {\n  background: #f7efe2;\n  font-family: system-ui;\n}\n\n.profile-card {\n  max-width: 420px;\n  margin: 48px auto;\n  padding: 28px;\n  border: 1px solid #d6c7b4;\n  border-radius: 16px;\n  background: white;\n}"
+        }
+      ],
+      "hints": [
+        "Önce index.html içinde boş h1 ve p alanlarını gerçek metinle doldur.",
+        "Beceri maddeleri için p etiketinin altına bir <ul> ve iki <li> ekle.",
+        "CSS tarafında .profile-card bloğuna padding, margin, border ve background ekle.",
+        "Preview'da kart ortalanmış ve okunabilir görünüyorsa doğru yoldasın."
+      ],
+      "checks": [
+        {
+          "id": "has-name",
+          "label": "Profil başlığı yazıldı",
+          "type": "code-regex",
+          "file": "index.html",
+          "pattern": "<h1>[^<]+</h1>"
+        },
+        {
+          "id": "has-skills",
+          "label": "Beceri listesi var",
+          "type": "code-contains",
+          "file": "index.html",
+          "value": "<ul>"
+        },
+        {
+          "id": "card-styled",
+          "label": "Kart stilleri eklendi",
+          "type": "code-contains",
+          "file": "styles.css",
+          "value": "border-radius"
+        }
+      ],
+      "previousLessonId": "react-render-dongusu-derin",
+      "nextLessonId": "mini-proje-urun-grid",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Mini projeyi küçük parçalara ayır: önce yapıyı kur, sonra görünümü veya davranışı ekle, en son Check ile kanıtla.",
+      "instructorNotes": [
+        "Mini proje, önceki derslerdeki kavramları tek bir küçük ürün parçasında birleştirir.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku ve hangi dosyanın ana işi yaptığını bul.",
+        "Görevi küçük parçalara ayır.",
+        "Her parçadan sonra preview veya Check ile doğrula."
+      ],
+      "commonMistakes": [
+        "Her şeyi tek hamlede değiştirmeye çalışmak.",
+        "Doğru dosya yerine başka sekmede düzenleme yapmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "mini-proje-urun-grid",
+      "title": "Mini proje: responsive ürün kartları",
+      "section": "Mini projeler",
+      "difficulty": "orta",
+      "explanation": "Bu projede birden fazla kartı responsive grid ile düzenleyeceksin. Amaç ekran genişliğine göre kırılan bir ürün listesi kurmak.",
+      "learningGoals": [
+        "Tekrarlı HTML kartları oluşturmak",
+        "CSS grid ile responsive layout kurmak",
+        "Kartlar arasında düzenli boşluk bırakmak"
+      ],
+      "task": "Üç ürün kartı oluştur ve .products alanını responsive grid yap.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"products\">\n</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".products {\n}\n\n.product {\n  padding: 20px;\n  background: white;\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"products\">\n  <article class=\"product\"><h2>Not defteri</h2><p>Günlük çalışma için.</p></article>\n  <article class=\"product\"><h2>Klavye</h2><p>Kod yazmak için.</p></article>\n  <article class=\"product\"><h2>Lamba</h2><p>Odaklanmak için.</p></article>\n</section>"
+        },
+        {
+          "path": "styles.css",
+          "language": "css",
+          "content": ".products {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));\n  gap: 16px;\n}\n\n.product {\n  padding: 20px;\n  background: white;\n  border: 1px solid #d6c7b4;\n  border-radius: 12px;\n}"
+        }
+      ],
+      "hints": [
+        "Önce products section içine üç ayrı article.product ekle.",
+        "Her article içinde h2 ve p kullan; kartların içeriği kısa olabilir.",
+        ".products bloğuna display: grid ve gap ekle.",
+        "Responsive davranış için grid-template-columns içinde repeat(auto-fit, minmax(...)) kullan."
+      ],
+      "checks": [
+        {
+          "id": "has-products",
+          "label": "Ürün kartları eklendi",
+          "type": "code-regex",
+          "file": "index.html",
+          "pattern": "class=\"product\"[\\s\\S]*class=\"product\"[\\s\\S]*class=\"product\""
+        },
+        {
+          "id": "has-grid",
+          "label": "Grid layout var",
+          "type": "code-contains",
+          "file": "styles.css",
+          "value": "display: grid"
+        },
+        {
+          "id": "has-responsive-columns",
+          "label": "Responsive kolon tanımı var",
+          "type": "code-contains",
+          "file": "styles.css",
+          "value": "minmax"
+        }
+      ],
+      "previousLessonId": "mini-proje-profil-karti",
+      "nextLessonId": "mini-proje-todo-panel",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Mini projeyi küçük parçalara ayır: önce yapıyı kur, sonra görünümü veya davranışı ekle, en son Check ile kanıtla.",
+      "instructorNotes": [
+        "Mini proje, önceki derslerdeki kavramları tek bir küçük ürün parçasında birleştirir.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku ve hangi dosyanın ana işi yaptığını bul.",
+        "Görevi küçük parçalara ayır.",
+        "Her parçadan sonra preview veya Check ile doğrula."
+      ],
+      "commonMistakes": [
+        "Her şeyi tek hamlede değiştirmeye çalışmak.",
+        "Doğru dosya yerine başka sekmede düzenleme yapmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "mini-proje-todo-panel",
+      "title": "Mini proje: yapılacaklar paneli",
+      "section": "Mini projeler",
+      "difficulty": "orta",
+      "explanation": "Bu projede HTML, CSS ve JavaScript'i birleştirerek küçük bir etkileşim kuracaksın. Butona tıklanınca yeni görev metni listeye eklenecek.",
+      "learningGoals": [
+        "Input değerini JavaScript ile okumak",
+        "Yeni liste maddesi oluşturmak",
+        "Buton event'i ile DOM güncellemek"
+      ],
+      "task": "Inputa yazılan metni butona tıklayınca listeye yeni li olarak ekle.",
+      "starterFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"todo\">\n  <input id=\"task\" placeholder=\"Görev yaz\">\n  <button id=\"add\">Ekle</button>\n  <ul id=\"list\"></ul>\n</section>"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "const input = document.querySelector('#task');\nconst button = document.querySelector('#add');\nconst list = document.querySelector('#list');\n"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "index.html",
+          "language": "html",
+          "content": "<section class=\"todo\">\n  <input id=\"task\" placeholder=\"Görev yaz\">\n  <button id=\"add\">Ekle</button>\n  <ul id=\"list\"></ul>\n</section>"
+        },
+        {
+          "path": "script.js",
+          "language": "javascript",
+          "content": "const input = document.querySelector('#task');\nconst button = document.querySelector('#add');\nconst list = document.querySelector('#list');\n\nbutton.addEventListener('click', () => {\n  const item = document.createElement('li');\n  item.textContent = input.value;\n  list.append(item);\n  input.value = '';\n});"
+        }
+      ],
+      "hints": [
+        "Önce button.addEventListener('click', ...) ile tıklama anını yakala.",
+        "Tıklama içinde document.createElement('li') ile yeni liste maddesi oluştur.",
+        "li metnini input.value ile doldur.",
+        "Son olarak list.append(item) ile maddeyi ul içine ekle."
+      ],
+      "checks": [
+        {
+          "id": "has-click",
+          "label": "Click event'i dinleniyor",
+          "type": "code-contains",
+          "file": "script.js",
+          "value": "addEventListener"
+        },
+        {
+          "id": "creates-li",
+          "label": "Yeni li oluşturuluyor",
+          "type": "code-contains",
+          "file": "script.js",
+          "value": "createElement"
+        },
+        {
+          "id": "uses-input-value",
+          "label": "Input değeri okunuyor",
+          "type": "code-contains",
+          "file": "script.js",
+          "value": "input.value"
+        }
+      ],
+      "previousLessonId": "mini-proje-urun-grid",
+      "nextLessonId": "mini-proje-react-sayac",
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Mini projeyi küçük parçalara ayır: önce yapıyı kur, sonra görünümü veya davranışı ekle, en son Check ile kanıtla.",
+      "instructorNotes": [
+        "Mini proje, önceki derslerdeki kavramları tek bir küçük ürün parçasında birleştirir.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku ve hangi dosyanın ana işi yaptığını bul.",
+        "Görevi küçük parçalara ayır.",
+        "Her parçadan sonra preview veya Check ile doğrula."
+      ],
+      "commonMistakes": [
+        "Her şeyi tek hamlede değiştirmeye çalışmak.",
+        "Doğru dosya yerine başka sekmede düzenleme yapmak."
+      ],
+      "glossary": []
+    },
+    {
+      "id": "mini-proje-react-sayac",
+      "title": "Mini proje: React sayaç paneli",
+      "section": "Mini projeler",
+      "difficulty": "orta",
+      "explanation": "Bu projede React component, state ve event bilgisini birleştireceksin. Amaç küçük ama tamamlanmış bir React etkileşimi kurmak.",
+      "learningGoals": [
+        "useState ile değişen veri tutmak",
+        "Buton event'i ile state güncellemek",
+        "State değerini JSX içinde göstermek"
+      ],
+      "task": "CounterPanel componentinde count state'i oluştur ve butona basınca değeri artır.",
+      "starterFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "export default function CounterPanel() {\n  return (\n    <section>\n      <h1>Sayaç</h1>\n      <p>0</p>\n      <button>Artır</button>\n    </section>\n  );\n}"
+        }
+      ],
+      "solutionFiles": [
+        {
+          "path": "App.tsx",
+          "language": "tsx",
+          "content": "import { useState } from 'react';\n\nexport default function CounterPanel() {\n  const [count, setCount] = useState(0);\n\n  return (\n    <section>\n      <h1>Sayaç</h1>\n      <p>{count}</p>\n      <button onClick={() => setCount(count + 1)}>Artır</button>\n    </section>\n  );\n}"
+        }
+      ],
+      "hints": [
+        "Dosyanın en üstüne useState import'u ekle.",
+        "Component içinde const [count, setCount] = useState(0) yaz.",
+        "Sabit 0 yerine JSX içinde {count} göster.",
+        "Butona onClick ekleyip setCount(count + 1) çağır."
+      ],
+      "checks": [
+        {
+          "id": "imports-usestate",
+          "label": "useState import edildi",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": "useState"
+        },
+        {
+          "id": "shows-count",
+          "label": "State ekranda gösteriliyor",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": "{count}"
+        },
+        {
+          "id": "updates-count",
+          "label": "Buton count değerini artırıyor",
+          "type": "code-contains",
+          "file": "App.tsx",
+          "value": "setCount"
+        }
+      ],
+      "previousLessonId": "mini-proje-todo-panel",
+      "nextLessonId": null,
+      "aiPrompt": "Ben modern web geliştirmeyi Türkçe öğreniyorum. Bana ipucu ver, kavramı sade anlat ve hatamı bulmama yardım et.",
+      "mentalModel": "Mini projeyi küçük parçalara ayır: önce yapıyı kur, sonra görünümü veya davranışı ekle, en son Check ile kanıtla.",
+      "instructorNotes": [
+        "Mini proje, önceki derslerdeki kavramları tek bir küçük ürün parçasında birleştirir.",
+        "Çözüm, kullanıcı takıldığında hedef hali incelemesi içindir."
+      ],
+      "walkthrough": [
+        "Starter kodu oku ve hangi dosyanın ana işi yaptığını bul.",
+        "Görevi küçük parçalara ayır.",
+        "Her parçadan sonra preview veya Check ile doğrula."
+      ],
+      "commonMistakes": [
+        "Her şeyi tek hamlede değiştirmeye çalışmak.",
+        "Doğru dosya yerine başka sekmede düzenleme yapmak."
+      ],
+      "glossary": []
     }
   ]
 }
